@@ -9,6 +9,6 @@ namespace SecureShopBusinessLogic.BindingModels
 		public int? Id { get; set; }
 		public string EquipmentName { get; set; }
 		public decimal Price { get; set; }
-		public Dictionary<int, (string, int)> EquipmentComponents { get; set; }
+		public Dictionary<int, (string, int)> EquipmentDevices { get; set; }
 	}
 }
