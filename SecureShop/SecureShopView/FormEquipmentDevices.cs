@@ -7,22 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Unity;
+using SecureShopBusinessLogic.BindingModels;
 using SecureShopBusinessLogic.BusinessLogics;
 using SecureShopBusinessLogic.ViewModels;
+using Unity;
 
 namespace SecureShopView
 {
-	public partial class FormEquipmentDevice : Form
+	public partial class FormEquipmentDevices : Form
 	{
 		[Dependency]
 		public new IUnityContainer Container { get; set; }
 		public int Id
 		{
-			get { return Convert.ToInt32(comboBox.SelectedValue); }
-			set { comboBox.SelectedValue = value; }
+			get { return Convert.ToInt32(comboBoxDevice.SelectedValue); }
+			set { comboBoxDevice.SelectedValue = value; }
 		}
-		public string ComponentName { get { return comboBox.Text; } }
+		public string ComponentName { get { return comboBoxDevice.Text; } }
 		public int Count
 		{
 			get { return Convert.ToInt32(textBoxCount.Text); }
@@ -31,27 +32,27 @@ namespace SecureShopView
 				textBoxCount.Text = value.ToString();
 			}
 		}
-		public FormEquipmentDevice(DeviceLogic logic)
+		public FormEquipmentDevices(DeviceLogic logic)
 		{
 			InitializeComponent();
 			List<DeviceViewModel> list = logic.Read(null);
 			if (list != null)
 			{
-				comboBox.DisplayMember = "ComponentName";
-				comboBox.ValueMember = "Id";
-				comboBox.DataSource = list;
-				comboBox.SelectedItem = null;
+				comboBoxDevice.DisplayMember = "ComponentName";
+				comboBoxDevice.ValueMember = "Id";
+				comboBoxDevice.DataSource = list;
+				comboBoxDevice.SelectedItem = null;
 			}
 		}
 		private void ButtonSave_Click(object sender, EventArgs e)
 		{
-			if (string.IsNullOrEmpty(countLbl.Text))
+			if (string.IsNullOrEmpty(textBoxCount.Text))
 			{
 				MessageBox.Show("Заполните поле Количество", "Ошибка",
 			   MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
-			if (comboBox.SelectedValue == null)
+			if (comboBoxDevice.SelectedValue == null)
 			{
 				MessageBox.Show("Выберите компонент", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
@@ -64,5 +65,6 @@ namespace SecureShopView
 			DialogResult = DialogResult.Cancel;
 			Close();
 		}
+
 	}
 }

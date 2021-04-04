@@ -30,7 +30,7 @@ namespace SecureShopBusinessLogic.BusinessLogics
 		{
 			var element = _deviceStorage.GetElement(new DeviceBindingModel
 			{
-				ComponentName = model.ComponentName
+				DeviceName = model.DeviceName
 			});
 			if (element != null && element.Id != model.Id)
 			{

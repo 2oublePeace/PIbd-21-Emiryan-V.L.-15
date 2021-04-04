@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using SecureShopBusinessLogic.Enums;
 
-namespace SecureShopBusinessLogic.BindingModels
+namespace SecureShopListImplement.Models
 {
-	/// <summary>
-	/// Заказ
-	/// </summary>
-	public class OrderBindingModel
+	public class Order
 	{
-		public int? Id { get; set; }
+		public int Id { get; set; }
 		public int EquipmentId { get; set; }
 		public string EquipmentName { get; set; }
 		public int Count { get; set; }

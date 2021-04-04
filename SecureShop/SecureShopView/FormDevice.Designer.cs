@@ -37,9 +37,9 @@ namespace SecureShopView
 			// 
 			// deviceSaveBtn
 			// 
-			this.deviceSaveBtn.Location = new System.Drawing.Point(186, 35);
+			this.deviceSaveBtn.Location = new System.Drawing.Point(152, 30);
 			this.deviceSaveBtn.Name = "deviceSaveBtn";
-			this.deviceSaveBtn.Size = new System.Drawing.Size(75, 25);
+			this.deviceSaveBtn.Size = new System.Drawing.Size(71, 22);
 			this.deviceSaveBtn.TabIndex = 0;
 			this.deviceSaveBtn.Text = "Сохранить";
 			this.deviceSaveBtn.UseVisualStyleBackColor = true;
@@ -47,9 +47,9 @@ namespace SecureShopView
 			// 
 			// deviceCancelBtn
 			// 
-			this.deviceCancelBtn.Location = new System.Drawing.Point(267, 35);
+			this.deviceCancelBtn.Location = new System.Drawing.Point(229, 30);
 			this.deviceCancelBtn.Name = "deviceCancelBtn";
-			this.deviceCancelBtn.Size = new System.Drawing.Size(75, 25);
+			this.deviceCancelBtn.Size = new System.Drawing.Size(64, 22);
 			this.deviceCancelBtn.TabIndex = 1;
 			this.deviceCancelBtn.Text = "Отмена";
 			this.deviceCancelBtn.UseVisualStyleBackColor = true;
@@ -58,24 +58,24 @@ namespace SecureShopView
 			// deviceLbl
 			// 
 			this.deviceLbl.AutoSize = true;
-			this.deviceLbl.Location = new System.Drawing.Point(12, 9);
+			this.deviceLbl.Location = new System.Drawing.Point(10, 8);
 			this.deviceLbl.Name = "deviceLbl";
-			this.deviceLbl.Size = new System.Drawing.Size(62, 15);
+			this.deviceLbl.Size = new System.Drawing.Size(60, 13);
 			this.deviceLbl.TabIndex = 2;
 			this.deviceLbl.Text = "Название:";
 			// 
 			// deviceTextBox
 			// 
-			this.deviceTextBox.Location = new System.Drawing.Point(83, 6);
+			this.deviceTextBox.Location = new System.Drawing.Point(71, 5);
 			this.deviceTextBox.Name = "deviceTextBox";
-			this.deviceTextBox.Size = new System.Drawing.Size(259, 23);
+			this.deviceTextBox.Size = new System.Drawing.Size(223, 20);
 			this.deviceTextBox.TabIndex = 3;
 			// 
 			// FormDevice
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(354, 67);
+			this.ClientSize = new System.Drawing.Size(303, 58);
 			this.Controls.Add(this.deviceTextBox);
 			this.Controls.Add(this.deviceLbl);
 			this.Controls.Add(this.deviceCancelBtn);

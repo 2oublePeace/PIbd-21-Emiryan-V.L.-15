@@ -12,7 +12,6 @@ using SecureShopBusinessLogic.BindingModels;
 using SecureShopBusinessLogic.BusinessLogics;
 using SecureShopBusinessLogic.ViewModels;
 
-
 namespace SecureShopView
 {
 	public partial class FormEquipment : Form
@@ -22,7 +21,7 @@ namespace SecureShopView
 		public int Id { set { id = value; } }
 		private readonly EquipmentLogic logic;
 		private int? id;
-		private Dictionary<int, (string, int)> equipmentDevices;
+		private Dictionary<int, (string, int)> equipmentComponents;
 		public FormEquipment(EquipmentLogic service)
 		{
 			InitializeComponent();
@@ -34,34 +33,33 @@ namespace SecureShopView
 			{
 				try
 				{
-					EquipmentViewModel view = logic.Read(new EquipmentBindingModel { Id = id.Value })?[0];
+					EquipmentViewModel view = logic.Read(new EquipmentBindingModel{Id =id.Value})?[0];
 					if (view != null)
 					{
 						textBoxName.Text = view.EquipmentName;
 						textBoxPrice.Text = view.Price.ToString();
-						equipmentDevices = view.EquipmentDevices;
+						equipmentComponents = view.EquipmentDevices;
 						LoadData();
 					}
 				}
 				catch (Exception ex)
 				{
-					MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
-				   MessageBoxIcon.Error);
+					MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			}
 			else
 			{
-				equipmentDevices = new Dictionary<int, (string, int)>();
+				equipmentComponents = new Dictionary<int, (string, int)>();
 			}
 		}
 		private void LoadData()
 		{
 			try
 			{
-				if (equipmentDevices != null)
+				if (equipmentComponents != null)
 				{
 					dataGridView.Rows.Clear();
-					foreach (var pc in equipmentDevices)
+					foreach (var pc in equipmentComponents)
 					{
 						dataGridView.Rows.Add(new object[] { pc.Key, pc.Value.Item1, pc.Value.Item2 });
 					}
@@ -75,31 +73,31 @@ namespace SecureShopView
 		}
 		private void ButtonAdd_Click(object sender, EventArgs e)
 		{
-			var form = Container.Resolve<FormEquipmentDevice>();
+			var form = Container.Resolve<FormEquipmentDevices>();
 			if (form.ShowDialog() == DialogResult.OK)
 			{
-				if (equipmentDevices.ContainsKey(form.Id))
+				if (equipmentComponents.ContainsKey(form.Id))
 				{
-					equipmentDevices[form.Id] = (form.ComponentName, form.Count);
+					equipmentComponents[form.Id] = (form.ComponentName, form.Count);
 				}
 				else
 				{
-					equipmentDevices.Add(form.Id, (form.ComponentName, form.Count));
+					equipmentComponents.Add(form.Id, (form.ComponentName, form.Count));
 				}
 				LoadData();
 			}
 		}
-		private void ButtonUpd_Click(object sender, EventArgs e)
+		private void ButtonEdit_Click(object sender, EventArgs e)
 		{
 			if (dataGridView.SelectedRows.Count == 1)
 			{
-				var form = Container.Resolve<FormEquipmentDevice>();
+				var form = Container.Resolve<FormEquipmentDevices>();
 				int id = Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value);
 				form.Id = id;
-				form.Count = equipmentDevices[id].Item2;
+				form.Count = equipmentComponents[id].Item2;
 				if (form.ShowDialog() == DialogResult.OK)
 				{
-					equipmentDevices[form.Id] = (form.ComponentName, form.Count);
+					equipmentComponents[form.Id] = (form.ComponentName, form.Count);
 					LoadData();
 				}
 			}
@@ -114,7 +112,7 @@ namespace SecureShopView
 					try
 					{
 
-						equipmentDevices.Remove(Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value));
+						equipmentComponents.Remove(Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value));
 					}
 					catch (Exception ex)
 					{
@@ -125,7 +123,7 @@ namespace SecureShopView
 				}
 			}
 		}
-		private void ButtonRef_Click(object sender, EventArgs e)
+		private void ButtonUpdate_Click(object sender, EventArgs e)
 		{
 			LoadData();
 		}
@@ -143,7 +141,7 @@ namespace SecureShopView
 			   MessageBoxIcon.Error);
 				return;
 			}
-			if (equipmentDevices == null || equipmentDevices.Count == 0)
+			if (equipmentComponents == null || equipmentComponents.Count == 0)
 			{
 				MessageBox.Show("Заполните компоненты", "Ошибка", MessageBoxButtons.OK,
 			   MessageBoxIcon.Error);
@@ -151,21 +149,14 @@ namespace SecureShopView
 			}
 			try
 			{
-				logic.CreateOrUpdate(new EquipmentBindingModel
-				{
-					Id = id,
-				    EquipmentName = textBoxName.Text,
-					Price = Convert.ToDecimal(textBoxPrice.Text),
-					EquipmentDevices = equipmentDevices
-				});
-				MessageBox.Show("Сохранение прошло успешно", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+				logic.CreateOrUpdate(new EquipmentBindingModel{Id = id, EquipmentName = textBoxName.Text, Price = Convert.ToDecimal(textBoxPrice.Text), EquipmentDevices = equipmentComponents});
+				MessageBox.Show("Сохранение прошло успешно", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				DialogResult = DialogResult.OK;
 				Close();
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
-			   MessageBoxIcon.Error);
+				MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 		private void ButtonCancel_Click(object sender, EventArgs e)

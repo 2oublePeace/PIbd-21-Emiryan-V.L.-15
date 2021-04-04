@@ -9,6 +9,6 @@ namespace SecureShopBusinessLogic.ViewModels
 	{
 		public int Id { get; set; }
 		[DisplayName("Название устройства")]
-		public string ComponentName { get; set; }
+		public string DeviceName { get; set; }
 	}
 }

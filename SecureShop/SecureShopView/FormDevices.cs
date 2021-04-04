@@ -23,7 +23,7 @@ namespace SecureShopView
 			InitializeComponent();
 			this.logic = logic;
 		}
-		private void FormComponents_Load(object sender, EventArgs e)
+		private void FormDevice_Load(object sender, EventArgs e)
 		{
 			LoadData();
 		}
@@ -43,8 +43,7 @@ namespace SecureShopView
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
-			   MessageBoxIcon.Error);
+				MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 		private void ButtonAdd_Click(object sender, EventArgs e)
@@ -55,7 +54,7 @@ namespace SecureShopView
 				LoadData();
 			}
 		}
-		private void ButtonUpd_Click(object sender, EventArgs e)
+		private void ButtonEdit_Click(object sender, EventArgs e)
 		{
 			if (dataGridView.SelectedRows.Count == 1)
 			{
@@ -74,8 +73,7 @@ namespace SecureShopView
 				if (MessageBox.Show("Удалить запись", "Вопрос", MessageBoxButtons.YesNo,
 			   MessageBoxIcon.Question) == DialogResult.Yes)
 				{
-					int id =
-				   Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value);
+					int id = Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value);
 					try
 					{
 						logic.Delete(new DeviceBindingModel { Id = id });
@@ -90,7 +88,7 @@ namespace SecureShopView
 			}
 		}
 
-		private void ButtonRef_Click(object sender, EventArgs e)
+		private void ButtonUpdate_Click(object sender, EventArgs e)
 		{
 			LoadData();
 		}

@@ -10,6 +10,6 @@ namespace SecureShopBusinessLogic.BindingModels
 	public class DeviceBindingModel
 	{
 		public int? Id { get; set; }
-		public string ComponentName { get; set; }
+		public string DeviceName { get; set; }
 	}
 }

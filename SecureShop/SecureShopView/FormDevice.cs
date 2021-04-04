@@ -34,7 +34,7 @@ namespace SecureShopView
 					var view = logic.Read(new DeviceBindingModel { Id = id })?[0];
 					if (view != null)
 					{
-						deviceTextBox.Text = view.ComponentName;
+						deviceTextBox.Text = view.DeviceName;
 					}
 				}
 				catch (Exception ex)
@@ -57,7 +57,7 @@ namespace SecureShopView
 				logic.CreateOrUpdate(new DeviceBindingModel
 				{
 					Id = id,
-					ComponentName = deviceTextBox.Text
+					DeviceName = deviceTextBox.Text
 				});
 				MessageBox.Show("Сохранение прошло успешно", "Сообщение",
 			   MessageBoxButtons.OK, MessageBoxIcon.Information);
