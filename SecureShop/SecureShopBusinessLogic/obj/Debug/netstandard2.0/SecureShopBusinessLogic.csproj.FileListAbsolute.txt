@@ -1,0 +1,9 @@
+C:\Users\user\Desktop\SecShop\SecureShop\SecureShopBusinessLogic\bin\Debug\netstandard2.0\SecureShopBusinessLogic.deps.json
+C:\Users\user\Desktop\SecShop\SecureShop\SecureShopBusinessLogic\bin\Debug\netstandard2.0\SecureShopBusinessLogic.dll
+C:\Users\user\Desktop\SecShop\SecureShop\SecureShopBusinessLogic\bin\Debug\netstandard2.0\SecureShopBusinessLogic.pdb
+C:\Users\user\Desktop\SecShop\SecureShop\SecureShopBusinessLogic\obj\Debug\netstandard2.0\SecureShopBusinessLogic.csprojAssemblyReference.cache
+C:\Users\user\Desktop\SecShop\SecureShop\SecureShopBusinessLogic\obj\Debug\netstandard2.0\SecureShopBusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\SecShop\SecureShop\SecureShopBusinessLogic\obj\Debug\netstandard2.0\SecureShopBusinessLogic.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\SecShop\SecureShop\SecureShopBusinessLogic\obj\Debug\netstandard2.0\SecureShopBusinessLogic.AssemblyInfo.cs
+C:\Users\user\Desktop\SecShop\SecureShop\SecureShopBusinessLogic\obj\Debug\netstandard2.0\SecureShopBusinessLogic.dll
+C:\Users\user\Desktop\SecShop\SecureShop\SecureShopBusinessLogic\obj\Debug\netstandard2.0\SecureShopBusinessLogic.pdb

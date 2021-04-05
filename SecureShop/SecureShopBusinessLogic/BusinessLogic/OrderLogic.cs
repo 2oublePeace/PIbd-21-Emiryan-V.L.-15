@@ -31,7 +31,8 @@ namespace SecureShopBusinessLogic.BusinessLogics
 		{
 			_orderStorage.Insert(new OrderBindingModel
 			{
-				EquipmentId = model.ProductId,
+				EquipmentId = model.EquipmentId,
+                EquipmentName = model.EquipmentName,
 				Count = model.Count,
 				Sum = model.Sum,
 				DateCreate = DateTime.Now,
