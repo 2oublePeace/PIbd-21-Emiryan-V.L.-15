@@ -86,10 +86,11 @@ namespace SecureShopView
             {
                 _logicO.CreateOrder(new CreateOrderBindingModel
                 {
+                    EquipmentName = comboBoxEquipment.Text,
                     EquipmentId = Convert.ToInt32(comboBoxEquipment.SelectedValue),
                     Count = Convert.ToInt32(textBoxCount.Text),
                     Sum = Convert.ToDecimal(textBoxSum.Text)
-                });
+                });  
                 MessageBox.Show("Сохранение прошло успешно", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
                 Close();
