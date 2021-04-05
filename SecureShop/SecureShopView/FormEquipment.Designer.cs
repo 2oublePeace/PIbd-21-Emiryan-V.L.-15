@@ -39,11 +39,11 @@ namespace SecureShopView
             this.editBtn = new System.Windows.Forms.Button();
             this.addBtn = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.saveBtn = new System.Windows.Forms.Button();
+            this.cancelBtn = new System.Windows.Forms.Button();
             this.deviceID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deviceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.saveBtn = new System.Windows.Forms.Button();
-            this.cancelBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -149,23 +149,6 @@ namespace SecureShopView
             this.dataGridView.Size = new System.Drawing.Size(465, 260);
             this.dataGridView.TabIndex = 0;
             // 
-            // deviceID
-            // 
-            this.deviceID.HeaderText = "ID";
-            this.deviceID.Name = "deviceID";
-            this.deviceID.Visible = false;
-            // 
-            // deviceColumn
-            // 
-            this.deviceColumn.HeaderText = "Устройство";
-            this.deviceColumn.Name = "deviceColumn";
-            this.deviceColumn.Width = 200;
-            // 
-            // countColumn
-            // 
-            this.countColumn.HeaderText = "Количество";
-            this.countColumn.Name = "countColumn";
-            // 
             // saveBtn
             // 
             this.saveBtn.Location = new System.Drawing.Point(476, 398);
@@ -186,6 +169,24 @@ namespace SecureShopView
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
+            // deviceID
+            // 
+            this.deviceID.HeaderText = "ID";
+            this.deviceID.Name = "deviceID";
+            this.deviceID.Visible = false;
+            // 
+            // deviceColumn
+            // 
+            this.deviceColumn.HeaderText = "Устройство";
+            this.deviceColumn.Name = "deviceColumn";
+            this.deviceColumn.Width = 200;
+            // 
+            // countColumn
+            // 
+            this.countColumn.HeaderText = "Количество";
+            this.countColumn.Name = "countColumn";
+            this.countColumn.Width = 230;
+            // 
             // FormEquipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,7 +201,7 @@ namespace SecureShopView
             this.Controls.Add(this.nameLbl);
             this.Name = "FormEquipment";
             this.Text = "FormEquipment";
-            this.Load += new System.EventHandler(this.FormProduct_Load);
+            this.Load += new System.EventHandler(this.FormEquipment_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -216,14 +217,14 @@ namespace SecureShopView
 		private System.Windows.Forms.TextBox textBoxName;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.DataGridView dataGridView;
-		private System.Windows.Forms.DataGridViewTextBoxColumn deviceID;
-		private System.Windows.Forms.DataGridViewTextBoxColumn deviceColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn countColumn;
 		private System.Windows.Forms.Button updateBtn;
 		private System.Windows.Forms.Button deleteBtn;
 		private System.Windows.Forms.Button editBtn;
 		private System.Windows.Forms.Button addBtn;
 		private System.Windows.Forms.Button saveBtn;
 		private System.Windows.Forms.Button cancelBtn;
-	}
+        private System.Windows.Forms.DataGridViewTextBoxColumn deviceID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn deviceColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn countColumn;
+    }
 }

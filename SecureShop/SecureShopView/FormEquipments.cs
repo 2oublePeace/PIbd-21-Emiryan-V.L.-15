@@ -24,6 +24,11 @@ namespace SecureShopView
             this.logic = logic;
         }
 
+        private void FormEquipments_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
         private void LoadData()
         {
             try

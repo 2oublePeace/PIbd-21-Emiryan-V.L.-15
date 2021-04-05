@@ -65,6 +65,7 @@
             this.comboBoxEquipment.Name = "comboBoxEquipment";
             this.comboBoxEquipment.Size = new System.Drawing.Size(243, 21);
             this.comboBoxEquipment.TabIndex = 2;
+            this.comboBoxEquipment.SelectedIndexChanged += new System.EventHandler(this.ComboBoxProduct_SelectedIndexChanged);
             // 
             // textBoxSum
             // 
@@ -79,6 +80,7 @@
             this.textBoxCount.Name = "textBoxCount";
             this.textBoxCount.Size = new System.Drawing.Size(243, 20);
             this.textBoxCount.TabIndex = 4;
+            this.textBoxCount.TextChanged += new System.EventHandler(this.TextBoxCount_TextChanged);
             // 
             // equipmentLbl
             // 

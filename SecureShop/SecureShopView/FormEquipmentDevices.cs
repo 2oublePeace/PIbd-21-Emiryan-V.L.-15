@@ -38,7 +38,7 @@ namespace SecureShopView
 			List<DeviceViewModel> list = logic.Read(null);
 			if (list != null)
 			{
-				comboBoxDevice.DisplayMember = "ComponentName";
+				comboBoxDevice.DisplayMember = "DeviceName";
 				comboBoxDevice.ValueMember = "Id";
 				comboBoxDevice.DataSource = list;
 				comboBoxDevice.SelectedItem = null;
@@ -48,8 +48,7 @@ namespace SecureShopView
 		{
 			if (string.IsNullOrEmpty(textBoxCount.Text))
 			{
-				MessageBox.Show("Заполните поле Количество", "Ошибка",
-			   MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Заполните поле Количество", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 			if (comboBoxDevice.SelectedValue == null)
