@@ -29,61 +29,62 @@ namespace SecureShopView
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.deviceSaveBtn = new System.Windows.Forms.Button();
-			this.deviceCancelBtn = new System.Windows.Forms.Button();
-			this.deviceLbl = new System.Windows.Forms.Label();
-			this.deviceTextBox = new System.Windows.Forms.TextBox();
-			this.SuspendLayout();
-			// 
-			// deviceSaveBtn
-			// 
-			this.deviceSaveBtn.Location = new System.Drawing.Point(152, 30);
-			this.deviceSaveBtn.Name = "deviceSaveBtn";
-			this.deviceSaveBtn.Size = new System.Drawing.Size(71, 22);
-			this.deviceSaveBtn.TabIndex = 0;
-			this.deviceSaveBtn.Text = "Сохранить";
-			this.deviceSaveBtn.UseVisualStyleBackColor = true;
-			this.deviceSaveBtn.Click += new System.EventHandler(this.ButtonSave_Click);
-			// 
-			// deviceCancelBtn
-			// 
-			this.deviceCancelBtn.Location = new System.Drawing.Point(229, 30);
-			this.deviceCancelBtn.Name = "deviceCancelBtn";
-			this.deviceCancelBtn.Size = new System.Drawing.Size(64, 22);
-			this.deviceCancelBtn.TabIndex = 1;
-			this.deviceCancelBtn.Text = "Отмена";
-			this.deviceCancelBtn.UseVisualStyleBackColor = true;
-			this.deviceCancelBtn.Click += new System.EventHandler(this.ButtonCancel_Click);
-			// 
-			// deviceLbl
-			// 
-			this.deviceLbl.AutoSize = true;
-			this.deviceLbl.Location = new System.Drawing.Point(10, 8);
-			this.deviceLbl.Name = "deviceLbl";
-			this.deviceLbl.Size = new System.Drawing.Size(60, 13);
-			this.deviceLbl.TabIndex = 2;
-			this.deviceLbl.Text = "Название:";
-			// 
-			// deviceTextBox
-			// 
-			this.deviceTextBox.Location = new System.Drawing.Point(71, 5);
-			this.deviceTextBox.Name = "deviceTextBox";
-			this.deviceTextBox.Size = new System.Drawing.Size(223, 20);
-			this.deviceTextBox.TabIndex = 3;
-			// 
-			// FormDevice
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(303, 58);
-			this.Controls.Add(this.deviceTextBox);
-			this.Controls.Add(this.deviceLbl);
-			this.Controls.Add(this.deviceCancelBtn);
-			this.Controls.Add(this.deviceSaveBtn);
-			this.Name = "FormDevice";
-			this.Text = "Устройство";
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.deviceSaveBtn = new System.Windows.Forms.Button();
+            this.deviceCancelBtn = new System.Windows.Forms.Button();
+            this.deviceLbl = new System.Windows.Forms.Label();
+            this.deviceTextBox = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // deviceSaveBtn
+            // 
+            this.deviceSaveBtn.Location = new System.Drawing.Point(152, 30);
+            this.deviceSaveBtn.Name = "deviceSaveBtn";
+            this.deviceSaveBtn.Size = new System.Drawing.Size(71, 22);
+            this.deviceSaveBtn.TabIndex = 0;
+            this.deviceSaveBtn.Text = "Сохранить";
+            this.deviceSaveBtn.UseVisualStyleBackColor = true;
+            this.deviceSaveBtn.Click += new System.EventHandler(this.ButtonSave_Click);
+            // 
+            // deviceCancelBtn
+            // 
+            this.deviceCancelBtn.Location = new System.Drawing.Point(229, 30);
+            this.deviceCancelBtn.Name = "deviceCancelBtn";
+            this.deviceCancelBtn.Size = new System.Drawing.Size(64, 22);
+            this.deviceCancelBtn.TabIndex = 1;
+            this.deviceCancelBtn.Text = "Отмена";
+            this.deviceCancelBtn.UseVisualStyleBackColor = true;
+            this.deviceCancelBtn.Click += new System.EventHandler(this.ButtonCancel_Click);
+            // 
+            // deviceLbl
+            // 
+            this.deviceLbl.AutoSize = true;
+            this.deviceLbl.Location = new System.Drawing.Point(10, 8);
+            this.deviceLbl.Name = "deviceLbl";
+            this.deviceLbl.Size = new System.Drawing.Size(60, 13);
+            this.deviceLbl.TabIndex = 2;
+            this.deviceLbl.Text = "Название:";
+            // 
+            // deviceTextBox
+            // 
+            this.deviceTextBox.Location = new System.Drawing.Point(71, 5);
+            this.deviceTextBox.Name = "deviceTextBox";
+            this.deviceTextBox.Size = new System.Drawing.Size(223, 20);
+            this.deviceTextBox.TabIndex = 3;
+            // 
+            // FormDevice
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(303, 58);
+            this.Controls.Add(this.deviceTextBox);
+            this.Controls.Add(this.deviceLbl);
+            this.Controls.Add(this.deviceCancelBtn);
+            this.Controls.Add(this.deviceSaveBtn);
+            this.Name = "FormDevice";
+            this.Text = "Устройство";
+            this.Load += new System.EventHandler(this.FormDevice_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 
