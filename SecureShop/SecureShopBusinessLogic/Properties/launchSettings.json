@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "SecureShopBusinessLogic": {
+      "commandName": "Project"
+    },
+    "SecureShopViewModel": {
+      "commandName": "Project",
+      "workingDirectory": "D:\\Projects\\C#\\SecureShop\\SecureShop\\SecureShopView"
+    }
+  }
+}
