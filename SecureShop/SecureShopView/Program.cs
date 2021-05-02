@@ -35,6 +35,7 @@ namespace SecureShopView
 			currentContainer.RegisterType<DeviceLogic>(new HierarchicalLifetimeManager());
 			currentContainer.RegisterType<OrderLogic>(new HierarchicalLifetimeManager());
 			currentContainer.RegisterType<EquipmentLogic>(new HierarchicalLifetimeManager());
+			currentContainer.RegisterType<ReportLogic>(new HierarchicalLifetimeManager());
 			return currentContainer;
 		}
 	}

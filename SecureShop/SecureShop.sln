@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureShopView", "SecureSho
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecureShopListImplement", "SecureShopListImplement\SecureShopListImplement.csproj", "{4F530700-8C4D-400B-BCC7-4ABB0E21E14B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureShopFileImplement", "SecureShopFileImplement\SecureShopFileImplement.csproj", "{AFD0A357-CA7A-497E-B221-D2D5B7A14B78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecureShopFileImplement", "SecureShopFileImplement\SecureShopFileImplement.csproj", "{AFD0A357-CA7A-497E-B221-D2D5B7A14B78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureShopDatabaseImplement", "SecureShopDatabaseImplement\SecureShopDatabaseImplement.csproj", "{9CD38D58-6E2C-4AF0-86C1-C6BEF5A948C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{AFD0A357-CA7A-497E-B221-D2D5B7A14B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFD0A357-CA7A-497E-B221-D2D5B7A14B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFD0A357-CA7A-497E-B221-D2D5B7A14B78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CD38D58-6E2C-4AF0-86C1-C6BEF5A948C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CD38D58-6E2C-4AF0-86C1-C6BEF5A948C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CD38D58-6E2C-4AF0-86C1-C6BEF5A948C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CD38D58-6E2C-4AF0-86C1-C6BEF5A948C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
