@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\C#\\SecureShop\\SecureShop\\SecureShopBusinessLogic\\SecureShopBusinessLogic.csproj": {}
+    "C:\\Users\\Светлана\\Documents\\projects\\SecureShop\\SecureShop\\SecureShopBusinessLogic\\SecureShopBusinessLogic.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\C#\\SecureShop\\SecureShop\\SecureShopBusinessLogic\\SecureShopBusinessLogic.csproj": {
+    "C:\\Users\\Светлана\\Documents\\projects\\SecureShop\\SecureShop\\SecureShopBusinessLogic\\SecureShopBusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\C#\\SecureShop\\SecureShop\\SecureShopBusinessLogic\\SecureShopBusinessLogic.csproj",
+        "projectUniqueName": "C:\\Users\\Светлана\\Documents\\projects\\SecureShop\\SecureShop\\SecureShopBusinessLogic\\SecureShopBusinessLogic.csproj",
         "projectName": "SecureShopBusinessLogic",
-        "projectPath": "D:\\Projects\\C#\\SecureShop\\SecureShop\\SecureShopBusinessLogic\\SecureShopBusinessLogic.csproj",
-        "packagesPath": "C:\\Users\\Володя\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\C#\\SecureShop\\SecureShop\\SecureShopBusinessLogic\\obj\\",
+        "projectPath": "C:\\Users\\Светлана\\Documents\\projects\\SecureShop\\SecureShop\\SecureShopBusinessLogic\\SecureShopBusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\Светлана\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Светлана\\Documents\\projects\\SecureShop\\SecureShop\\SecureShopBusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Володя\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Светлана\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -65,7 +65,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

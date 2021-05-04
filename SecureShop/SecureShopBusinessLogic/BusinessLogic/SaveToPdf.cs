@@ -33,7 +33,7 @@ namespace SecureShopBusinessLogic.BusinessLogic
             CreateRow(new PdfRowParameters
             {
                 Table = table,
-                Texts = new List<string> { "Дата заказа", "Подарок", "Количество", "Сумма", "Статус" },
+                Texts = new List<string> { "Дата заказа", "Комплект", "Количество", "Сумма", "Статус" },
                 Style = "NormalTitle",
                 ParagraphAlignment = ParagraphAlignment.Center
             });

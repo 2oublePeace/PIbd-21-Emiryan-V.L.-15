@@ -57,7 +57,11 @@ namespace SecureShopBusinessLogic.BusinessLogics
 		/// <returns></returns>
 		public List<ReportOrdersViewModel> GetOrders(ReportBindingModel model)
 		{
-			return _orderStorage.GetFullList()
+			return _orderStorage.GetFilteredList(new OrderBindingModel
+			{
+				DateFrom = model.DateFrom,
+				DateTo = model.DateTo
+			})
 			.Select(x => new ReportOrdersViewModel
 			{
 				DateCreate = x.DateCreate,
