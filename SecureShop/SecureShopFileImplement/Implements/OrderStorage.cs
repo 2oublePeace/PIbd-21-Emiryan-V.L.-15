@@ -110,7 +110,6 @@ namespace SecureShopFileImplement.Implements
         private Order CreateModel(OrderBindingModel model, Order order)
         {
             order.EquipmentId = model.EquipmentId;
-            order.EquipmentName = model.EquipmentName;
             order.Count = model.Count;
             order.Sum = model.Sum;
             order.Status = model.Status;

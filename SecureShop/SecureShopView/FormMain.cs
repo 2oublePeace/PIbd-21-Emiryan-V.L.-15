@@ -18,10 +18,12 @@ namespace SecureShopView
 		[Dependency]
 		public new IUnityContainer Container { get; set; }
 		private readonly OrderLogic _orderLogic;
-		public FormMain(OrderLogic orderLogic)
+		private readonly ReportLogic _reportLogic;
+		public FormMain(OrderLogic orderLogic, ReportLogic reportLogic)
 		{
 			InitializeComponent();
 			this._orderLogic = orderLogic;
+			this._reportLogic = reportLogic;
 		}
 		private void FormMain_Load(object sender, EventArgs e)
 		{
@@ -108,6 +110,33 @@ namespace SecureShopView
 				}
 			}
 		}
+
+		private void DevicesToolStripMenuReportItem_Click(object sender, EventArgs e)
+		{
+			using (var dialog = new SaveFileDialog { Filter = "docx|*.docx" })
+			{
+				if (dialog.ShowDialog() == DialogResult.OK)
+				{
+					_reportLogic.SaveDevicesToWordFile(new ReportBindingModel
+					{
+						FileName = dialog.FileName
+					});
+					MessageBox.Show("Выполнено", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+			}
+		}
+
+		private void DeviceEquipmentsToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var form = Container.Resolve<FormReportEquipmentDevices>(); form.ShowDialog();
+		}
+
+		private void OrdersToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var form = Container.Resolve<FormReportOrders>(); form.ShowDialog();
+		}
+
+
 		private void ButtonRef_Click(object sender, EventArgs e)
 		{
 			LoadData();

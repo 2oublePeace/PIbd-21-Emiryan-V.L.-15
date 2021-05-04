@@ -6,7 +6,7 @@ using SecureShopBusinessLogic.HelperModels;
 using SecureShopBusinessLogic.Interfaces;
 using SecureShopBusinessLogic.ViewModels;
 using System.Linq;
-using SecureShopBusinessLogic.BusinessLogics;
+using SecureShopBusinessLogic.BusinessLogic;
 
 namespace SecureShopBusinessLogic.BusinessLogics
 {
@@ -57,7 +57,7 @@ namespace SecureShopBusinessLogic.BusinessLogics
 		/// <returns></returns>
 		public List<ReportOrdersViewModel> GetOrders(ReportBindingModel model)
 		{
-			return _orderStorage.GetFilteredList(new OrderBindingModel { DateFrom = model.DateFrom, DateTo = model.DateTo })
+			return _orderStorage.GetFullList()
 			.Select(x => new ReportOrdersViewModel
 			{
 				DateCreate = x.DateCreate,
@@ -72,12 +72,12 @@ namespace SecureShopBusinessLogic.BusinessLogics
 		/// Сохранение компонент в файл-Word
 		/// </summary>
 		/// <param name="model"></param>
-		public void SaveMaterialsToWordFile(ReportBindingModel model)
+		public void SaveDevicesToWordFile(ReportBindingModel model)
 		{
 			SaveToWord.CreateDoc(new WordInfo
 			{
 				FileName = model.FileName,
-				Title = "Список подарков",
+				Title = "Список комплектаций",
 				Devices = _deviceStorage.GetFullList()
 			});
 		}
@@ -90,7 +90,7 @@ namespace SecureShopBusinessLogic.BusinessLogics
 			SaveToExcel.CreateDoc(new ExcelInfo
 			{
 				FileName = model.FileName,
-				Title = "Список компонент",
+				Title = "Список устройств",
 				EquipmentDevices = GetEquipmentDevice()
 			});
 		}
