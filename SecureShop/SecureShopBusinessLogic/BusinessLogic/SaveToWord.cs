@@ -29,11 +29,11 @@ namespace SecureShopBusinessLogic.BusinessLogics
 					}
 				}));
 
-				foreach (var device in info.Devices)
+				foreach (var equipment in info.Equipments)
 				{
 					docBody.AppendChild(CreateParagraph(new WordParagraph
 					{
-						Texts = new List<(string, WordTextProperties)> { (device.DeviceName, new WordTextProperties { Size = "24", }) },
+						Texts = new List<(string, WordTextProperties)> { ($"{equipment.EquipmentName}: ", new WordTextProperties { Size = "24", Bold = true }), (equipment.Price.ToString(), new WordTextProperties { Size = "24" }) },
 						TextProperties = new WordTextProperties
 						{
 							Size = "24",

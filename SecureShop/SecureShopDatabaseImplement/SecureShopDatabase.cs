@@ -9,7 +9,7 @@ namespace SecureShopDatabaseImplement
 		{
 			if (optionsBuilder.IsConfigured == false)
 			{
-				optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-SKTV29P;Initial Catalog=SecureShopDatabase;Integrated Security=True;MultipleActiveResultSets=True;");
+				optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=NameShopDatabase;Integrated Security=True;MultipleActiveResultSets=True;");
 			}
 			base.OnConfiguring(optionsBuilder);
 		}
@@ -17,7 +17,6 @@ namespace SecureShopDatabaseImplement
 		public virtual DbSet<Device> Devices { set; get; }
 		public virtual DbSet<Equipment> Equipments { set; get; }
 		public virtual DbSet<EquipmentDevice> EquipmentDevices { set; get; }
-
 		public virtual DbSet<Order> Orders { set; get; }
 	}
 }

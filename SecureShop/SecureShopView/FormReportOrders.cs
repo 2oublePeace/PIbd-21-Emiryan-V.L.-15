@@ -31,7 +31,7 @@ namespace SecureShopView
                 ReportParameter parameter = new ReportParameter("ReportParameterPeriod",
                 "c " +
                dateTimePicker1.Value.ToShortDateString() +
-                " по " +
+               " по " +
                dateTimePicker2.Value.ToShortDateString());
                 reportViewer1.LocalReport.SetParameters(parameter);
                 var dataSource = logic.GetOrders(new ReportBindingModel
@@ -41,6 +41,10 @@ namespace SecureShopView
                 });
                 ReportDataSource source = new ReportDataSource("DataSetOrders",
                dataSource);
+                if (source != null)
+				{
+                    reportViewer1.LocalReport.DataSources.Clear();
+                }
                 reportViewer1.LocalReport.DataSources.Add(source);
                 reportViewer1.RefreshReport();
             }

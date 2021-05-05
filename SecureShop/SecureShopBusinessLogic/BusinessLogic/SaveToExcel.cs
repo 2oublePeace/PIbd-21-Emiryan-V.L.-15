@@ -74,12 +74,12 @@ namespace SecureShopBusinessLogic.BusinessLogics
 						ShareStringPart = shareStringPart,
 						ColumnName = "A",
 						RowIndex = rowIndex,
-						Text = eq.DeviceName,
+						Text = eq.EquipmentName,
 						StyleIndex = 0U
 					});
 					rowIndex++;
 
-					foreach (var equipment in eq.Equipments)
+					foreach (var equipment in eq.Devices)
 					{
 						InsertCellInWorksheet(new ExcelCellParameters
 						{

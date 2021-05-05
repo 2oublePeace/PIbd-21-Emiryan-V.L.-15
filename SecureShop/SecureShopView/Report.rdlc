@@ -31,7 +31,7 @@
         </Field>
         <Field Name="Status">
           <DataField>Status</DataField>
-          <rd:TypeName>SecureShopBusinessLogic.Enums.OrderStatus</rd:TypeName>
+          <rd:TypeName>System.Enum.GetName(First(Fields!Status.Value).GetType(), Fields!Status.Value)</rd:TypeName>
         </Field>
         <Field Name="Sum">
           <DataField>Sum</DataField>
@@ -385,7 +385,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Status.Value</Value>
+                                  <Value>=System.Enum.GetName(First(Fields!Status.Value).GetType(), Fields!Status.Value)</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>

@@ -40,18 +40,18 @@ namespace SecureShopDatabaseImplement.Implements
             using (var context = new SecureShopDatabase())
             {
                 return context.Orders
-                    .Where(rec => rec.EquipmentId == model.EquipmentId)
-                    .Select(rec => new OrderViewModel
-                    {
-                        Id = rec.Id,
-                        EquipmentName = rec.Equipment.EquipmentName,
-                        EquipmentId = rec.EquipmentId,
-                        Count = rec.Count,
-                        Sum = rec.Sum,
-                        Status = rec.Status,
-                        DateCreate = rec.DateCreate,
-                        DateImplement = rec.DateImplement
-                    })
+                    .Where(rec => rec.DateCreate >= model.DateFrom && rec.DateCreate <= model.DateTo)
+                .Select(rec => new OrderViewModel
+                {
+                    Id = rec.Id,
+                    EquipmentName = rec.Equipment.EquipmentName,
+                    EquipmentId = rec.EquipmentId,
+                    Count = rec.Count,
+                    Sum = rec.Sum,
+                    Status = rec.Status,
+                    DateCreate = rec.DateCreate,
+                    DateImplement = rec.DateImplement
+                })
                     .ToList();
             }
         }

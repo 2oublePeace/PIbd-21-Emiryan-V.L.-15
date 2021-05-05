@@ -28,9 +28,9 @@ namespace SecureShopView
 					dataGridView.Rows.Clear();
 					foreach (var elem in dict)
 					{
-						dataGridView.Rows.Add(new object[] { elem.DeviceName, "", "" });
+						dataGridView.Rows.Add(new object[] { elem.EquipmentName, "", "" });
 
-						foreach (var listElem in elem.Equipments)
+						foreach (var listElem in elem.Devices)
 						{
 							dataGridView.Rows.Add(new object[] { "", listElem.Item1, listElem.Item2 });
 

@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecureShopListImplement", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecureShopFileImplement", "SecureShopFileImplement\SecureShopFileImplement.csproj", "{AFD0A357-CA7A-497E-B221-D2D5B7A14B78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureShopDatabaseImplement", "SecureShopDatabaseImplement\SecureShopDatabaseImplement.csproj", "{9CD38D58-6E2C-4AF0-86C1-C6BEF5A948C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecureShopDatabaseImplement", "SecureShopDatabaseImplement\SecureShopDatabaseImplement.csproj", "{9CD38D58-6E2C-4AF0-86C1-C6BEF5A948C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

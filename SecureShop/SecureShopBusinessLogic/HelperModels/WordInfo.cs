@@ -9,6 +9,6 @@ namespace SecureShopBusinessLogic.HelperModels
 	{
 		public string FileName { get; set; }
 		public string Title { get; set; }
-		public List<DeviceViewModel> Devices { get; set; }
+		public List<EquipmentViewModel> Equipments { get; set; }
 	}
 }

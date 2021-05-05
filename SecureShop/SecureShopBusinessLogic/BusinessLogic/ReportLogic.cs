@@ -25,22 +25,23 @@ namespace SecureShopBusinessLogic.BusinessLogics
 		/// <returns></returns>
 		public List<ReportEquipmentDeviceViewModel> GetEquipmentDevice()
 		{
-			var devices = _deviceStorage.GetFullList(); var equipments = _equipmentStorage.GetFullList();
+			var devices = _deviceStorage.GetFullList(); 
+			var equipments = _equipmentStorage.GetFullList();
 			var list = new List<ReportEquipmentDeviceViewModel>();
 
-			foreach (var device in devices)
+			foreach (var equipment in equipments)
 			{
 				var record = new ReportEquipmentDeviceViewModel
 				{
-					DeviceName = device.DeviceName,
-					Equipments = new List<Tuple<string, int>>(),
+					EquipmentName = equipment.EquipmentName,
+					Devices = new List<Tuple<string, int>>(),
 					TotalCount = 0
 				};
-				foreach (var equipment in equipments)
+				foreach (var device in devices)
 				{
 					if (equipment.EquipmentDevices.ContainsKey(device.Id))
 					{
-						record.Equipments.Add(new Tuple<string, int>(equipment.EquipmentName, equipment.EquipmentDevices[device.Id].Item2));
+						record.Devices.Add(new Tuple<string, int>(device.DeviceName, equipment.EquipmentDevices[device.Id].Item2));
 						record.TotalCount += equipment.EquipmentDevices[device.Id].Item2;
 					}
 				}
@@ -81,8 +82,8 @@ namespace SecureShopBusinessLogic.BusinessLogics
 			SaveToWord.CreateDoc(new WordInfo
 			{
 				FileName = model.FileName,
-				Title = "Список комплектаций",
-				Devices = _deviceStorage.GetFullList()
+				Title = "Список устройств",
+				Equipments = _equipmentStorage.GetFullList()
 			});
 		}
 		/// <summary>
@@ -94,7 +95,7 @@ namespace SecureShopBusinessLogic.BusinessLogics
 			SaveToExcel.CreateDoc(new ExcelInfo
 			{
 				FileName = model.FileName,
-				Title = "Список устройств",
+				Title = "Список устройств-комплектаций",
 				EquipmentDevices = GetEquipmentDevice()
 			});
 		}
