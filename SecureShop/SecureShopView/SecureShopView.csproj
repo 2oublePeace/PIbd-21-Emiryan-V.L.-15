@@ -151,6 +151,10 @@
       <Project>{fb56d780-c39e-4cbb-9523-3f2299f19ef3}</Project>
       <Name>SecureShopBusinessLogic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SecureShopFileImplement\SecureShopFileImplement.csproj">
+      <Project>{afd0a357-ca7a-497e-b221-d2d5b7a14b78}</Project>
+      <Name>SecureShopFileImplement</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SecureShopListImplement\SecureShopListImplement.csproj">
       <Project>{4f530700-8c4d-400b-bcc7-4abb0e21e14b}</Project>
       <Name>SecureShopListImplement</Name>
