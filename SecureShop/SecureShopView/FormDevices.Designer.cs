@@ -97,7 +97,7 @@ namespace SecureShopView
             this.Controls.Add(this.addBtn);
             this.Controls.Add(this.dataGridView);
             this.Name = "FormDevices";
-            this.Text = "FormDevices";
+            this.Text = "Устройства";
             this.Load += new System.EventHandler(this.FormDevice_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);

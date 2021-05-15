@@ -132,7 +132,7 @@
 			this.Controls.Add(this.saveBtn);
 			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.Name = "FormCreateOrder";
-			this.Text = "Заказ";
+			this.Text = "Создать заказ";
 			this.Load += new System.EventHandler(this.FormCreateOrder_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();

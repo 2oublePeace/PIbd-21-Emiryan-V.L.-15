@@ -103,7 +103,7 @@ namespace SecureShopView
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormEquipmentDevices";
-            this.Text = "FormEquipmentDevices";
+            this.Text = "Устройста-Комплектации";
             this.ResumeLayout(false);
             this.PerformLayout();
 

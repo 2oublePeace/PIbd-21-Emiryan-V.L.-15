@@ -219,7 +219,7 @@ namespace SecureShopView
 			this.Controls.Add(this.nameLbl);
 			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.Name = "FormEquipment";
-			this.Text = "FormEquipment";
+			this.Text = "Создать набор";
 			this.Load += new System.EventHandler(this.FormEquipment_Load);
 			this.equipmentGroupBox.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();

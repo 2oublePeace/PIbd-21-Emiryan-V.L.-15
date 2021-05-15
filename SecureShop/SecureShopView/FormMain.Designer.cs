@@ -159,7 +159,7 @@ namespace SecureShopView
 			this.MainMenuStrip = this.topMenuStrip;
 			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.Name = "FormMain";
-			this.Text = "FormMain";
+			this.Text = "Магазин охранных систем";
 			this.Load += new System.EventHandler(this.FormMain_Load);
 			this.topMenuStrip.ResumeLayout(false);
 			this.topMenuStrip.PerformLayout();
