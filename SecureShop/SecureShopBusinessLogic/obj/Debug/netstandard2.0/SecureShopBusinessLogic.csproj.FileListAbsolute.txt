@@ -16,3 +16,12 @@ D:\Projects\C#\SecureShop\SecureShop\SecureShopBusinessLogic\obj\Debug\netstanda
 D:\Projects\C#\SecureShop\SecureShop\SecureShopBusinessLogic\obj\Debug\netstandard2.0\SecureShopBusinessLogic.csproj.CoreCompileInputs.cache
 D:\Projects\C#\SecureShop\SecureShop\SecureShopBusinessLogic\obj\Debug\netstandard2.0\SecureShopBusinessLogic.dll
 D:\Projects\C#\SecureShop\SecureShop\SecureShopBusinessLogic\obj\Debug\netstandard2.0\SecureShopBusinessLogic.pdb
+C:\Users\Светлана\Documents\projects\SecureShop\SecureShop\SecureShopBusinessLogic\bin\Debug\netstandard2.0\SecureShopBusinessLogic.deps.json
+C:\Users\Светлана\Documents\projects\SecureShop\SecureShop\SecureShopBusinessLogic\bin\Debug\netstandard2.0\SecureShopBusinessLogic.dll
+C:\Users\Светлана\Documents\projects\SecureShop\SecureShop\SecureShopBusinessLogic\bin\Debug\netstandard2.0\SecureShopBusinessLogic.pdb
+C:\Users\Светлана\Documents\projects\SecureShop\SecureShop\SecureShopBusinessLogic\obj\Debug\netstandard2.0\SecureShopBusinessLogic.csprojAssemblyReference.cache
+C:\Users\Светлана\Documents\projects\SecureShop\SecureShop\SecureShopBusinessLogic\obj\Debug\netstandard2.0\SecureShopBusinessLogic.AssemblyInfoInputs.cache
+C:\Users\Светлана\Documents\projects\SecureShop\SecureShop\SecureShopBusinessLogic\obj\Debug\netstandard2.0\SecureShopBusinessLogic.AssemblyInfo.cs
+C:\Users\Светлана\Documents\projects\SecureShop\SecureShop\SecureShopBusinessLogic\obj\Debug\netstandard2.0\SecureShopBusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\Светлана\Documents\projects\SecureShop\SecureShop\SecureShopBusinessLogic\obj\Debug\netstandard2.0\SecureShopBusinessLogic.dll
+C:\Users\Светлана\Documents\projects\SecureShop\SecureShop\SecureShopBusinessLogic\obj\Debug\netstandard2.0\SecureShopBusinessLogic.pdb
