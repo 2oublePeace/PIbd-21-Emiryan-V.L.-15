@@ -130,7 +130,6 @@ namespace SecureShopListImplement.Implements
             {
                 Id = order.Id,
                 EquipmentId = order.EquipmentId,
-                EquipmentName = order.EquipmentName,
                 Count = order.Count,
                 Sum = order.Sum,
                 Status = order.Status,

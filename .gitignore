@@ -361,3 +361,12 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+.vs
+SecureShop/SecureShopBusinessLogic/bin/*
+SecureShop/SecureShopBusinessLogic/obj/*
+SecureShop/SecureShopView/bin/*
+SecureShop/SecureShopView/obj/*
+SecureShop/*/Properties/*
+!SecureShop/View/Properties/*
+*/*.user

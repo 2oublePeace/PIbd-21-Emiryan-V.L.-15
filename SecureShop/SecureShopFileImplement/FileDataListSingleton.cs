@@ -94,7 +94,6 @@ namespace SecureShopFileImplement
 						{
 							Id = Convert.ToInt32(elem.Attribute("Id").Value),
 							EquipmentId = Convert.ToInt32(elem.Element("EquipmentId").Value),
-							EquipmentName = elem.Element("EquipmentName").Value,
 							Count = Convert.ToInt32(elem.Element("Count").Value),
 							Sum = Convert.ToDecimal(elem.Element("Sum").Value),
 							Status = status,
@@ -107,7 +106,6 @@ namespace SecureShopFileImplement
 						{
 							Id = Convert.ToInt32(elem.Attribute("Id").Value),
 							EquipmentId = Convert.ToInt32(elem.Element("EquipmentId").Value),
-							EquipmentName = elem.Element("EquipmentName").Value,
 							Count = Convert.ToInt32(elem.Element("Count").Value),
 							Sum = Convert.ToDecimal(elem.Element("Sum").Value),
 							Status = status,
@@ -173,7 +171,6 @@ namespace SecureShopFileImplement
 					xElement.Add(new XElement("Order",
 				 new XAttribute("Id", order.Id),
 				 new XElement("EquipmentId", order.EquipmentId),
-				 new XElement("EquipmentName", order.EquipmentName),
 				 new XElement("Count", order.Count),
 				 new XElement("Sum", order.Sum),
 				 new XElement("Status", order.Status),
