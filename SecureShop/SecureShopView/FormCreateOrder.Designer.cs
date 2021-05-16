@@ -36,11 +36,13 @@
 			this.equipmentLbl = new System.Windows.Forms.Label();
 			this.countLbl = new System.Windows.Forms.Label();
 			this.sumLbl = new System.Windows.Forms.Label();
+			this.comboBoxClient = new System.Windows.Forms.ComboBox();
+			this.clientLbl = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// saveBtn
 			// 
-			this.saveBtn.Location = new System.Drawing.Point(284, 134);
+			this.saveBtn.Location = new System.Drawing.Point(284, 167);
 			this.saveBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.saveBtn.Name = "saveBtn";
 			this.saveBtn.Size = new System.Drawing.Size(112, 38);
@@ -51,7 +53,7 @@
 			// 
 			// cancelBtn
 			// 
-			this.cancelBtn.Location = new System.Drawing.Point(405, 134);
+			this.cancelBtn.Location = new System.Drawing.Point(405, 167);
 			this.cancelBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.cancelBtn.Name = "cancelBtn";
 			this.cancelBtn.Size = new System.Drawing.Size(112, 38);
@@ -72,7 +74,7 @@
 			// 
 			// textBoxSum
 			// 
-			this.textBoxSum.Location = new System.Drawing.Point(153, 94);
+			this.textBoxSum.Location = new System.Drawing.Point(153, 127);
 			this.textBoxSum.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.textBoxSum.Name = "textBoxSum";
 			this.textBoxSum.Size = new System.Drawing.Size(362, 26);
@@ -80,7 +82,7 @@
 			// 
 			// textBoxCount
 			// 
-			this.textBoxCount.Location = new System.Drawing.Point(153, 52);
+			this.textBoxCount.Location = new System.Drawing.Point(153, 85);
 			this.textBoxCount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.textBoxCount.Name = "textBoxCount";
 			this.textBoxCount.Size = new System.Drawing.Size(362, 26);
@@ -100,7 +102,7 @@
 			// countLbl
 			// 
 			this.countLbl.AutoSize = true;
-			this.countLbl.Location = new System.Drawing.Point(18, 57);
+			this.countLbl.Location = new System.Drawing.Point(18, 90);
 			this.countLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.countLbl.Name = "countLbl";
 			this.countLbl.Size = new System.Drawing.Size(104, 20);
@@ -110,18 +112,37 @@
 			// sumLbl
 			// 
 			this.sumLbl.AutoSize = true;
-			this.sumLbl.Location = new System.Drawing.Point(18, 98);
+			this.sumLbl.Location = new System.Drawing.Point(18, 131);
 			this.sumLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.sumLbl.Name = "sumLbl";
 			this.sumLbl.Size = new System.Drawing.Size(62, 20);
 			this.sumLbl.TabIndex = 7;
 			this.sumLbl.Text = "Сумма:";
 			// 
+			// comboBoxClient
+			// 
+			this.comboBoxClient.FormattingEnabled = true;
+			this.comboBoxClient.Location = new System.Drawing.Point(153, 45);
+			this.comboBoxClient.Name = "comboBoxClient";
+			this.comboBoxClient.Size = new System.Drawing.Size(364, 28);
+			this.comboBoxClient.TabIndex = 8;
+			// 
+			// clientLbl
+			// 
+			this.clientLbl.AutoSize = true;
+			this.clientLbl.Location = new System.Drawing.Point(18, 53);
+			this.clientLbl.Name = "clientLbl";
+			this.clientLbl.Size = new System.Drawing.Size(69, 20);
+			this.clientLbl.TabIndex = 9;
+			this.clientLbl.Text = "Клиент:";
+			// 
 			// FormCreateOrder
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(540, 186);
+			this.ClientSize = new System.Drawing.Size(540, 224);
+			this.Controls.Add(this.clientLbl);
+			this.Controls.Add(this.comboBoxClient);
 			this.Controls.Add(this.sumLbl);
 			this.Controls.Add(this.countLbl);
 			this.Controls.Add(this.equipmentLbl);
@@ -149,5 +170,7 @@
 		private System.Windows.Forms.Label equipmentLbl;
 		private System.Windows.Forms.Label countLbl;
 		private System.Windows.Forms.Label sumLbl;
+		private System.Windows.Forms.ComboBox comboBoxClient;
+		private System.Windows.Forms.Label clientLbl;
 	}
 }
