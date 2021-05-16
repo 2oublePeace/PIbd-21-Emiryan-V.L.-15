@@ -363,8 +363,8 @@ MigrationBackup/
 FodyWeavers.xsd
 
 .vs
-*/bin/*
-*/obj/*
+SecureShop/*/bin/*
+SecureShop/*/obj/*
+SecureShop/*/Properties/*
 !SecureShop/View/Properties/*
-*/Properties/*
 */*.user
