@@ -89,7 +89,28 @@ namespace SecureShopBusinessLogic.BusinessLogics
 		}
 		public void PayOrder(ChangeStatusBindingModel model)
 		{
-			// продумать логику
+			var order = _orderStorage.GetElement(new OrderBindingModel
+			{
+				Id = model.OrderId
+			});
+			if (order == null)
+			{
+				throw new Exception("Не найден заказ");
+			}
+			if (order.Status != OrderStatus.Готов)
+			{
+				throw new Exception("Заказ не в статусе \"Готов\"");
+			}
+			_orderStorage.Update(new OrderBindingModel
+			{
+				Id = order.Id,
+				EquipmentId = order.EquipmentId,
+				Count = order.Count,
+				Sum = order.Sum,
+				DateCreate = order.DateCreate,
+				DateImplement = order.DateImplement,
+				Status = OrderStatus.Оплачен
+			});
 		}
 	}
 }

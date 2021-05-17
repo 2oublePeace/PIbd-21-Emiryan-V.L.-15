@@ -81,7 +81,7 @@ namespace SecureShopView
             this.Controls.Add(this.deviceCancelBtn);
             this.Controls.Add(this.deviceSaveBtn);
             this.Name = "FormDevice";
-            this.Text = "Устройство";
+            this.Text = "Создать устройство";
             this.Load += new System.EventHandler(this.FormDevice_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
