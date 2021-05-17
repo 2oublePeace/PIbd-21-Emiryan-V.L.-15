@@ -23,7 +23,7 @@ namespace SecureShopBusinessLogic.ViewModels
 		public string ClientFIO { get; set; }
 
 		[DataMember]
-		[DisplayName("Изделие")]
+		[DisplayName("Комплект")]
 		public string EquipmentName { get; set; }
 
 		[DataMember]

@@ -74,6 +74,7 @@
 			// 
 			// textBoxSum
 			// 
+			this.textBoxSum.Enabled = false;
 			this.textBoxSum.Location = new System.Drawing.Point(153, 127);
 			this.textBoxSum.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.textBoxSum.Name = "textBoxSum";
@@ -89,6 +90,7 @@
 			this.textBoxCount.Size = new System.Drawing.Size(362, 26);
 			this.textBoxCount.TabIndex = 4;
 			this.textBoxCount.Click += new System.EventHandler(this.TextBoxCount_TextChanged);
+			this.textBoxCount.TextChanged += new System.EventHandler(this.TextBoxCount_TextChanged);
 			// 
 			// equipmentLbl
 			// 

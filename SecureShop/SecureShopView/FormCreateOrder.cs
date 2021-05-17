@@ -35,6 +35,14 @@ namespace SecureShopView
                     comboBoxEquipment.DataSource = list;
                     comboBoxEquipment.SelectedItem = null;
                 }
+                List<ClientViewModel> listClients = _logicC.Read(null);
+                if (listClients != null)
+                {
+                    comboBoxClient.DisplayMember = "ClientFIO";
+                    comboBoxClient.ValueMember = "Id";
+                    comboBoxClient.DataSource = listClients;
+                    comboBoxClient.SelectedItem = null;
+                }
             }
             catch (Exception ex)
             {

@@ -58,7 +58,7 @@ namespace SecureShopBusinessLogic.BusinessLogics
 			{
 				Id = order.Id,
 				EquipmentId = order.EquipmentId,
-				ClientId = model.ClientId,
+				ClientId = order.ClientId,
 				Count = order.Count,
 				Sum = order.Sum,
 				DateCreate = order.DateCreate,
@@ -81,7 +81,7 @@ namespace SecureShopBusinessLogic.BusinessLogics
 			{
 				Id = order.Id,
 				EquipmentId = order.EquipmentId,
-				ClientId = model.ClientId,
+				ClientId = order.ClientId,
 				Count = order.Count,
 				Sum = order.Sum,
 				DateCreate = order.DateCreate,
@@ -107,7 +107,7 @@ namespace SecureShopBusinessLogic.BusinessLogics
 			{
 				Id = order.Id,
 				EquipmentId = order.EquipmentId,
-				ClientId = model.ClientId,
+				ClientId = order.ClientId,
 				Count = order.Count,
 				Sum = order.Sum,
 				DateCreate = order.DateCreate,
