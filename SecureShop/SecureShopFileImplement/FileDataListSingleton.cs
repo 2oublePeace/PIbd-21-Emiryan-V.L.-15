@@ -13,22 +13,25 @@ namespace SecureShopFileImplement
 	{
 		private static FileDataListSingleton instance;
 
-		private readonly string DeviceFileName = "Device.xml"; 
+		private readonly string DeviceFileName = "Device.xml";
 		private readonly string OrderFileName = "Order.xml";
 		private readonly string EquipmentFileName = "Equipment.xml";
 		private readonly string ClientFileName = "Client.xml";
+		private readonly string ImplementerFileName = "Implementer.xml";
 
 		public List<Device> Devices { get; set; }
 		public List<Order> Orders { get; set; }
 		public List<Equipment> Equipments { get; set; }
 		public List<Client> Clients { get; set; }
-
+		public List<Implementer> Implementers { get; set; }
+		
 		private FileDataListSingleton()
 		{
-			Devices = LoadDevices(); 
-			Orders = LoadOrders(); 
+			Devices = LoadDevices();
+			Orders = LoadOrders();
 			Equipments = LoadEquipments();
 			Clients = LoadClients();
+			Implementers = LoadImplementers();
 		}
 
 		public static FileDataListSingleton GetInstance()
@@ -68,6 +71,28 @@ namespace SecureShopFileImplement
 			}
 			return list;
 		}
+
+		private List<Implementer> LoadImplementers()
+		{
+			var list = new List<Implementer>();
+			if (File.Exists(ImplementerFileName))
+			{
+				XDocument xDocument = XDocument.Load(ImplementerFileName);
+				var xElements = xDocument.Root.Elements("Implementers").ToList();
+				foreach (var elem in xElements)
+				{
+					list.Add(new Implementer
+					{
+						Id = Convert.ToInt32(elem.Attribute("Id").Value),
+						Name = elem.Element("Name").Value,
+						WorkingTime = Convert.ToInt32(elem.Element("WorkingTime").Value),
+						PauseTime = Convert.ToInt32(elem.Element("PauseTime").Value)
+					});
+				}
+			}
+			return list;
+		}
+
 		private List<Order> LoadOrders()
 		{
 			var list = new List<Order>();

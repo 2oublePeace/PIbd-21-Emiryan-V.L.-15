@@ -19,6 +19,7 @@ namespace SecureShopView
 		public new IUnityContainer Container { get; set; }
 		private readonly OrderLogic _orderLogic;
 		private readonly ReportLogic _reportLogic;
+		private readonly WorkModeling workModeling;
 		public FormMain(OrderLogic orderLogic, ReportLogic reportLogic)
 		{
 		InitializeComponent();
@@ -147,6 +148,20 @@ namespace SecureShopView
 		{
 			var form = Container.Resolve<FormClients>();
 			form.ShowDialog();
+		}
+
+		private void ImplementersToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var form = Container.Resolve<FormImplementers>();
+			form.ShowDialog();
+		}
+
+
+
+		private void StartWorkToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			workModeling.DoWork();
+			LoadData();
 		}
 	}
 }

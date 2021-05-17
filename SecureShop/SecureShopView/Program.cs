@@ -38,6 +38,8 @@ namespace SecureShopView
 			currentContainer.RegisterType<EquipmentLogic>(new HierarchicalLifetimeManager());
 			currentContainer.RegisterType<ClientLogic>(new HierarchicalLifetimeManager());
 			currentContainer.RegisterType<ReportLogic>(new HierarchicalLifetimeManager());
+			currentContainer.RegisterType<IImplementerStorage, ImplementerStorage>(new HierarchicalLifetimeManager());
+			currentContainer.RegisterType<ImplementerStorage>(new HierarchicalLifetimeManager());
 			return currentContainer;
 		}
 	}
