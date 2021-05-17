@@ -17,8 +17,4 @@
     <ProjectReference Include="..\SecureShopBusinessLogic\SecureShopBusinessLogic.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
-
 </Project>

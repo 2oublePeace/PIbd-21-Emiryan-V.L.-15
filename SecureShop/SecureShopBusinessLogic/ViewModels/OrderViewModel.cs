@@ -26,7 +26,8 @@ namespace SecureShopBusinessLogic.ViewModels
 		[DisplayName("Изделие")]
 		public string EquipmentName { get; set; }
 
-		[DataMember] [DisplayName("Количество")] 
+		[DataMember]
+		[DisplayName("Количество")] 
 		public int Count { get; set; }
 
 		[DataMember]
