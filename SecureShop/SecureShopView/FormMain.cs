@@ -21,7 +21,7 @@ namespace SecureShopView
 		private readonly ReportLogic _reportLogic;
 		public FormMain(OrderLogic orderLogic, ReportLogic reportLogic)
 		{
-			InitializeComponent();
+		InitializeComponent();
 			this._orderLogic = orderLogic;
 			this._reportLogic = reportLogic;
 		}
@@ -39,6 +39,7 @@ namespace SecureShopView
 					dataGridView.DataSource = list;
 					dataGridView.Columns[0].Visible = false;
 					dataGridView.Columns[1].Visible = false;
+					dataGridView.Columns[2].Visible = false;
 				}
 			}
 			catch (Exception ex)
@@ -140,6 +141,12 @@ namespace SecureShopView
 		private void ButtonRef_Click(object sender, EventArgs e)
 		{
 			LoadData();
+		}
+
+		private void ClientsToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var form = Container.Resolve<FormClients>();
+			form.ShowDialog();
 		}
 	}
 }

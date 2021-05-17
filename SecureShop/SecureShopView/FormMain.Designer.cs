@@ -43,19 +43,20 @@ namespace SecureShopView
 			this.orderReadyBtn = new System.Windows.Forms.Button();
 			this.orderPayedBtn = new System.Windows.Forms.Button();
 			this.updateListBtn = new System.Windows.Forms.Button();
+			this.клиентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.topMenuStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// topMenuStrip
 			// 
+			this.topMenuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
 			this.topMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
 			this.topMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.справочникиToolStripMenuItem,
             this.отчетыToolStripMenuItem});
 			this.topMenuStrip.Location = new System.Drawing.Point(0, 0);
 			this.topMenuStrip.Name = "topMenuStrip";
-			this.topMenuStrip.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
 			this.topMenuStrip.Size = new System.Drawing.Size(1305, 35);
 			this.topMenuStrip.TabIndex = 0;
 			this.topMenuStrip.Text = "menuStrip1";
@@ -64,7 +65,8 @@ namespace SecureShopView
 			// 
 			this.справочникиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.устройстваToolStripMenuItem,
-            this.комплектыToolStripMenuItem});
+            this.комплектыToolStripMenuItem,
+            this.клиентыToolStripMenuItem});
 			this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
 			this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(139, 29);
 			this.справочникиToolStripMenuItem.Text = "Справочники";
@@ -180,6 +182,13 @@ namespace SecureShopView
 			this.updateListBtn.UseVisualStyleBackColor = true;
 			this.updateListBtn.Click += new System.EventHandler(this.ButtonRef_Click);
 			// 
+			// клиентыToolStripMenuItem
+			// 
+			this.клиентыToolStripMenuItem.Name = "клиентыToolStripMenuItem";
+			this.клиентыToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+			this.клиентыToolStripMenuItem.Text = "Клиенты";
+			this.клиентыToolStripMenuItem.Click += new System.EventHandler(this.ClientsToolStripMenuItem_Click);
+			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -221,5 +230,6 @@ namespace SecureShopView
 		private System.Windows.Forms.ToolStripMenuItem списокУстройствToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem устройстваПоКомплектациямToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem списокЗазказовToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem клиентыToolStripMenuItem;
 	}
 }

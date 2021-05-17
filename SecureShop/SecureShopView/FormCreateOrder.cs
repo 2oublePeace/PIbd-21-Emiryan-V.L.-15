@@ -15,11 +15,13 @@ namespace SecureShopView
         public new IUnityContainer Container { get; set; }
         private readonly EquipmentLogic _logicP;
         private readonly OrderLogic _logicO;
-        public FormCreateOrder(EquipmentLogic logicE, OrderLogic logicO)
+        private readonly ClientLogic _logicC;
+        public FormCreateOrder(EquipmentLogic logicE, OrderLogic logicO, ClientLogic logicC)
         {
             InitializeComponent();
             _logicP = logicE;
             _logicO = logicO;
+            _logicC = logicC;
         }
         private void FormCreateOrder_Load(object sender, EventArgs e)
         {
@@ -32,6 +34,14 @@ namespace SecureShopView
                     comboBoxEquipment.ValueMember = "Id";
                     comboBoxEquipment.DataSource = list;
                     comboBoxEquipment.SelectedItem = null;
+                }
+                List<ClientViewModel> listClients = _logicC.Read(null);
+                if (listClients != null)
+                {
+                    comboBoxClient.DisplayMember = "ClientFIO";
+                    comboBoxClient.ValueMember = "Id";
+                    comboBoxClient.DataSource = listClients;
+                    comboBoxClient.SelectedItem = null;
                 }
             }
             catch (Exception ex)
@@ -60,7 +70,7 @@ namespace SecureShopView
         {
             CalcSum();
         }
-        private void ComboBoxProduct_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBoxEquipment_SelectedIndexChanged(object sender, EventArgs e)
         {
             CalcSum();
         }
@@ -80,11 +90,11 @@ namespace SecureShopView
             {
                 _logicO.CreateOrder(new CreateOrderBindingModel
                 {
-                    EquipmentName = comboBoxEquipment.Text,
+                    ClientId = Convert.ToInt32(comboBoxClient.SelectedValue),
                     EquipmentId = Convert.ToInt32(comboBoxEquipment.SelectedValue),
                     Count = Convert.ToInt32(textBoxCount.Text),
                     Sum = Convert.ToDecimal(textBoxSum.Text)
-                });  
+                });
                 MessageBox.Show("Сохранение прошло успешно", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
                 Close();

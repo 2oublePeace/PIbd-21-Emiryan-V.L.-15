@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecureShopFileImplement", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecureShopDatabaseImplement", "SecureShopDatabaseImplement\SecureShopDatabaseImplement.csproj", "{9CD38D58-6E2C-4AF0-86C1-C6BEF5A948C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureShopRestApi", "SecureShopRestApi\SecureShopRestApi.csproj", "{FCB225F4-27BE-4695-95AB-66340201928F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureShopClientApp", "SecureShowClientApp\SecureShopClientApp.csproj", "{FC0D0A70-DB87-48FF-BA3E-7B065135B3ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{9CD38D58-6E2C-4AF0-86C1-C6BEF5A948C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CD38D58-6E2C-4AF0-86C1-C6BEF5A948C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CD38D58-6E2C-4AF0-86C1-C6BEF5A948C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCB225F4-27BE-4695-95AB-66340201928F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCB225F4-27BE-4695-95AB-66340201928F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCB225F4-27BE-4695-95AB-66340201928F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCB225F4-27BE-4695-95AB-66340201928F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC0D0A70-DB87-48FF-BA3E-7B065135B3ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC0D0A70-DB87-48FF-BA3E-7B065135B3ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC0D0A70-DB87-48FF-BA3E-7B065135B3ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC0D0A70-DB87-48FF-BA3E-7B065135B3ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

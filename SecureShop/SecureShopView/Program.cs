@@ -32,9 +32,11 @@ namespace SecureShopView
 			currentContainer.RegisterType<IDeviceStorage, DeviceStorage>(new HierarchicalLifetimeManager());
 			currentContainer.RegisterType<IOrderStorage, OrderStorage>(new HierarchicalLifetimeManager());
 			currentContainer.RegisterType<IEquipmentStorage, EquipmentStorage>(new HierarchicalLifetimeManager());
+			currentContainer.RegisterType<IClientStorage, ClientStorage>(new HierarchicalLifetimeManager());
 			currentContainer.RegisterType<DeviceLogic>(new HierarchicalLifetimeManager());
 			currentContainer.RegisterType<OrderLogic>(new HierarchicalLifetimeManager());
 			currentContainer.RegisterType<EquipmentLogic>(new HierarchicalLifetimeManager());
+			currentContainer.RegisterType<ClientLogic>(new HierarchicalLifetimeManager());
 			currentContainer.RegisterType<ReportLogic>(new HierarchicalLifetimeManager());
 			return currentContainer;
 		}

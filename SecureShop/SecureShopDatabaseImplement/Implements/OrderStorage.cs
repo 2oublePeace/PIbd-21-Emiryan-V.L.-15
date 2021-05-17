@@ -1,4 +1,5 @@
-﻿using SecureShopBusinessLogic.BindingModels;
+﻿using Microsoft.EntityFrameworkCore;
+using SecureShopBusinessLogic.BindingModels;
 using SecureShopBusinessLogic.Interfaces;
 using SecureShopBusinessLogic.ViewModels;
 using SecureShopDatabaseImplement.Models;
@@ -15,19 +16,9 @@ namespace SecureShopDatabaseImplement.Implements
         {
             using (var context = new SecureShopDatabase())
             {
-                return context.Orders
-                    .Select(rec => new OrderViewModel
-                    {
-                        Id = rec.Id,
-                        EquipmentName = rec.Equipment.EquipmentName,
-                        EquipmentId = rec.EquipmentId,
-                        Count = rec.Count,
-                        Sum = rec.Sum,
-                        Status = rec.Status,
-                        DateCreate = rec.DateCreate,
-                        DateImplement = rec.DateImplement
-                    })
-                    .ToList();
+                return context.Orders.Include(rec => rec.Equipment)
+                    .Include(rec => rec.Client)
+                    .Select(CreateModel).ToList();
             }
         }
         public List<OrderViewModel> GetFilteredList(OrderBindingModel model)
@@ -36,23 +27,17 @@ namespace SecureShopDatabaseImplement.Implements
             {
                 return null;
             }
-
             using (var context = new SecureShopDatabase())
             {
                 return context.Orders
-                    .Where(rec => rec.DateCreate >= model.DateFrom && rec.DateCreate <= model.DateTo)
-                .Select(rec => new OrderViewModel
-                {
-                    Id = rec.Id,
-                    EquipmentName = rec.Equipment.EquipmentName,
-                    EquipmentId = rec.EquipmentId,
-                    Count = rec.Count,
-                    Sum = rec.Sum,
-                    Status = rec.Status,
-                    DateCreate = rec.DateCreate,
-                    DateImplement = rec.DateImplement
-                })
-                    .ToList();
+                    .Include(rec => rec.Equipment)
+                    .Include(rec => rec.Client)
+                    .Where(rec => (!model.DateFrom.HasValue &&
+                    !model.DateTo.HasValue && rec.DateCreate.Date == model.DateCreate.Date) ||
+                    (model.DateFrom.HasValue && model.DateTo.HasValue && rec.DateCreate.Date >=
+                    model.DateFrom.Value.Date && rec.DateCreate.Date <= model.DateTo.Value.Date) ||
+                    (model.ClientId.HasValue && rec.ClientId == model.ClientId))
+                    .Select(CreateModel).ToList();
             }
         }
         public OrderViewModel GetElement(OrderBindingModel model)
@@ -65,20 +50,12 @@ namespace SecureShopDatabaseImplement.Implements
             using (var context = new SecureShopDatabase())
             {
                 var order = context.Orders
+                    .Include(rec => rec.Client)
+                    .Include(rec => rec.Equipment)
                     .FirstOrDefault(rec => rec.Id == model.Id);
 
                 return order != null ?
-                    new OrderViewModel
-                    {
-                        Id = order.Id,
-                        EquipmentName = context.Equipments.FirstOrDefault(rec => rec.Id == order.EquipmentId)?.EquipmentName,
-                        EquipmentId = order.EquipmentId,
-                        Count = order.Count,
-                        Sum = order.Sum,
-                        Status = order.Status,
-                        DateCreate = order.DateCreate,
-                        DateImplement = order.DateImplement
-                    } :
+                    CreateModel(order) :
                     null;
             }
         }
@@ -120,15 +97,33 @@ namespace SecureShopDatabaseImplement.Implements
                 context.SaveChanges();
             }
         }
+        private OrderViewModel CreateModel(Order order)
+        {
+            return new OrderViewModel
+            {
+                Id = order.Id,
+                EquipmentId = order.EquipmentId,
+                ClientId = order.ClientId,
+                ClientFIO = order.Client.ClientFIO,
+                EquipmentName = order.Equipment.EquipmentName,
+                Count = order.Count,
+                Sum = order.Sum,
+                Status = order.Status,
+                DateCreate = order.DateCreate,
+                DateImplement = order?.DateImplement
+
+            };
+        }
+
         private Order CreateModel(OrderBindingModel model, Order order)
         {
             order.EquipmentId = model.EquipmentId;
-            order.Sum = model.Sum;
+            order.ClientId = model.ClientId.Value;
             order.Count = model.Count;
             order.Status = model.Status;
+            order.Sum = model.Sum;
             order.DateCreate = model.DateCreate;
             order.DateImplement = model.DateImplement;
-
             return order;
         }
     }
