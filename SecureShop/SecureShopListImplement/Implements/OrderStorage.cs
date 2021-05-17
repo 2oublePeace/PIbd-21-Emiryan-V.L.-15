@@ -40,6 +40,13 @@ namespace SecureShopListImplement.Implements
                 {
                     result.Add(CreateModel(order));
                 }
+                else if (model.Id == null)
+				{
+                    if (order.DateCreate >= model.DateFrom && order.DateCreate <= model.DateTo)
+                    {
+                        result.Add(CreateModel(order));
+                    }
+                }
             }
             return result;
         }

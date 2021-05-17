@@ -98,7 +98,7 @@ namespace SecureShopView
 			this.equipmentGroupBox.Size = new System.Drawing.Size(930, 509);
 			this.equipmentGroupBox.TabIndex = 4;
 			this.equipmentGroupBox.TabStop = false;
-			this.equipmentGroupBox.Text = "Компоненты";
+			this.equipmentGroupBox.Text = "Устройства";
 			// 
 			// updateBtn
 			// 
@@ -219,7 +219,7 @@ namespace SecureShopView
 			this.Controls.Add(this.nameLbl);
 			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.Name = "FormEquipment";
-			this.Text = "Создать набор";
+			this.Text = "Создать комплектацию";
 			this.Load += new System.EventHandler(this.FormEquipment_Load);
 			this.equipmentGroupBox.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
