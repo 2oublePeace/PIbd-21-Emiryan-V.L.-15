@@ -4,7 +4,7 @@ using SecureShopBusinessLogic.ViewModels;
 using System;
 using System.Collections.Generic;
 
-namespace GiftShopBusinessLogic.BusinessLogics
+namespace SecureShopBusinessLogic.BusinessLogics
 {
     public class ClientLogic
     {

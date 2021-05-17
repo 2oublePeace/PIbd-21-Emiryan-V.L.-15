@@ -70,7 +70,7 @@
 			this.comboBoxEquipment.Name = "comboBoxEquipment";
 			this.comboBoxEquipment.Size = new System.Drawing.Size(362, 28);
 			this.comboBoxEquipment.TabIndex = 2;
-			this.comboBoxEquipment.SelectedIndexChanged += new System.EventHandler(this.ComboBoxProduct_SelectedIndexChanged);
+			this.comboBoxEquipment.Click += new System.EventHandler(this.ComboBoxEquipment_SelectedIndexChanged);
 			// 
 			// textBoxSum
 			// 
@@ -79,6 +79,7 @@
 			this.textBoxSum.Name = "textBoxSum";
 			this.textBoxSum.Size = new System.Drawing.Size(362, 26);
 			this.textBoxSum.TabIndex = 3;
+			this.textBoxSum.Click += new System.EventHandler(this.TextBoxCount_TextChanged);
 			// 
 			// textBoxCount
 			// 
@@ -87,7 +88,7 @@
 			this.textBoxCount.Name = "textBoxCount";
 			this.textBoxCount.Size = new System.Drawing.Size(362, 26);
 			this.textBoxCount.TabIndex = 4;
-			this.textBoxCount.TextChanged += new System.EventHandler(this.TextBoxCount_TextChanged);
+			this.textBoxCount.Click += new System.EventHandler(this.TextBoxCount_TextChanged);
 			// 
 			// equipmentLbl
 			// 

@@ -15,11 +15,13 @@ namespace SecureShopView
         public new IUnityContainer Container { get; set; }
         private readonly EquipmentLogic _logicP;
         private readonly OrderLogic _logicO;
-        public FormCreateOrder(EquipmentLogic logicE, OrderLogic logicO)
+        private readonly ClientLogic _logicC;
+        public FormCreateOrder(EquipmentLogic logicE, OrderLogic logicO, ClientLogic logicC)
         {
             InitializeComponent();
             _logicP = logicE;
             _logicO = logicO;
+            _logicC = logicC;
         }
         private void FormCreateOrder_Load(object sender, EventArgs e)
         {
@@ -60,7 +62,7 @@ namespace SecureShopView
         {
             CalcSum();
         }
-        private void ComboBoxProduct_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBoxEquipment_SelectedIndexChanged(object sender, EventArgs e)
         {
             CalcSum();
         }
@@ -99,5 +101,5 @@ namespace SecureShopView
             DialogResult = DialogResult.Cancel;
             Close();
         }
-	}
+    }
 }

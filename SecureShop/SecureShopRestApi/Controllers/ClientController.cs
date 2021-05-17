@@ -2,7 +2,7 @@
 using SecureShopBusinessLogic.BusinessLogics;
 using SecureShopBusinessLogic.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using GiftShopBusinessLogic.BusinessLogics;
+using SecureShopBusinessLogic.BusinessLogics;
 
 namespace SecureShopRestApi.Controllers
 {
