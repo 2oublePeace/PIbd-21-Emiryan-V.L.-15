@@ -17,7 +17,6 @@ namespace SecureShopBusinessLogic.ViewModels
         [DataMember]
         public int EquipmentId { get; set; }
         [DataMember]
-        [DisplayName("ID Исполнителя")]
         public int? ImplementerId { get; set; }
         [DataMember]
         [DisplayName("Клиент")]
