@@ -19,11 +19,14 @@ namespace SecureShopView
 		public new IUnityContainer Container { get; set; }
 		private readonly OrderLogic _orderLogic;
 		private readonly ReportLogic _reportLogic;
-		public FormMain(OrderLogic orderLogic, ReportLogic reportLogic)
+		private readonly WorkModeling _workModeling;
+		public FormMain(OrderLogic orderLogic, ReportLogic reportLogic, WorkModeling workModeling)
 		{
-		InitializeComponent();
-			this._orderLogic = orderLogic;
-			this._reportLogic = reportLogic;
+			InitializeComponent();
+			_orderLogic = orderLogic;
+			_reportLogic = reportLogic;
+			_workModeling = workModeling;
+			LoadData();
 		}
 		private void FormMain_Load(object sender, EventArgs e)
 		{
@@ -40,6 +43,7 @@ namespace SecureShopView
 					dataGridView.Columns[0].Visible = false;
 					dataGridView.Columns[1].Visible = false;
 					dataGridView.Columns[2].Visible = false;
+					dataGridView.Columns[3].Visible = false;
 				}
 			}
 			catch (Exception ex)
@@ -147,6 +151,20 @@ namespace SecureShopView
 		{
 			var form = Container.Resolve<FormClients>();
 			form.ShowDialog();
+		}
+
+		private void ImplementersToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var form = Container.Resolve<FormImplementers>();
+			form.ShowDialog();
+		}
+
+
+
+		private void StartWorkToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			_workModeling.DoWork();
+			LoadData();
 		}
 	}
 }

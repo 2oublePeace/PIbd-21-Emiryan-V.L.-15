@@ -1,12 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SecureShopBusinessLogic.BindingModels;
+﻿using SecureShopBusinessLogic.BindingModels;
+using SecureShopBusinessLogic.Enums;
 using SecureShopBusinessLogic.Interfaces;
 using SecureShopBusinessLogic.ViewModels;
 using SecureShopDatabaseImplement.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using SecureShopDatabaseImplement.Models;
 
 namespace SecureShopDatabaseImplement.Implements
 {
@@ -16,8 +17,10 @@ namespace SecureShopDatabaseImplement.Implements
         {
             using (var context = new SecureShopDatabase())
             {
-                return context.Orders.Include(rec => rec.Equipment)
+                return context.Orders
+                    .Include(rec => rec.Equipment)
                     .Include(rec => rec.Client)
+                    .Include(rec => rec.Implementer)
                     .Select(CreateModel).ToList();
             }
         }
@@ -32,14 +35,21 @@ namespace SecureShopDatabaseImplement.Implements
                 return context.Orders
                     .Include(rec => rec.Equipment)
                     .Include(rec => rec.Client)
-                    .Where(rec => (!model.DateFrom.HasValue &&
-                    !model.DateTo.HasValue && rec.DateCreate.Date == model.DateCreate.Date) ||
-                    (model.DateFrom.HasValue && model.DateTo.HasValue && rec.DateCreate.Date >=
-                    model.DateFrom.Value.Date && rec.DateCreate.Date <= model.DateTo.Value.Date) ||
-                    (model.ClientId.HasValue && rec.ClientId == model.ClientId))
+                    .Include(rec => rec.Implementer)
+                    .Where(rec => (!model.DateFrom.HasValue && !model.DateTo.HasValue &&
+                    rec.DateCreate.Date == model.DateCreate.Date) ||
+                     (model.DateFrom.HasValue && model.DateTo.HasValue &&
+                    rec.DateCreate.Date >= model.DateFrom.Value.Date && rec.DateCreate.Date <=
+                    model.DateTo.Value.Date) ||
+                     (model.ClientId.HasValue && rec.ClientId == model.ClientId) ||
+                    (model.FreeOrders.HasValue && model.FreeOrders.Value && rec.Status ==
+                    OrderStatus.Принят) ||
+                     (model.ImplementerId.HasValue && rec.ImplementerId ==
+                    model.ImplementerId && rec.Status == OrderStatus.Выполняется))
                     .Select(CreateModel).ToList();
             }
         }
+
         public OrderViewModel GetElement(OrderBindingModel model)
         {
             if (model == null)
@@ -50,8 +60,9 @@ namespace SecureShopDatabaseImplement.Implements
             using (var context = new SecureShopDatabase())
             {
                 var order = context.Orders
-                    .Include(rec => rec.Client)
                     .Include(rec => rec.Equipment)
+                    .Include(rec => rec.Client)
+                    .Include(rec => rec.Implementer)
                     .FirstOrDefault(rec => rec.Id == model.Id);
 
                 return order != null ?
@@ -103,15 +114,17 @@ namespace SecureShopDatabaseImplement.Implements
             {
                 Id = order.Id,
                 EquipmentId = order.EquipmentId,
-                ClientId = order.ClientId,
+                ClientId = order.ClientId.Value,
+                ImplementerId = order.ImplementerId,
                 ClientFIO = order.Client.ClientFIO,
                 EquipmentName = order.Equipment.EquipmentName,
                 Count = order.Count,
                 Sum = order.Sum,
                 Status = order.Status,
                 DateCreate = order.DateCreate,
-                DateImplement = order?.DateImplement
-
+                DateImplement = order?.DateImplement,
+                ImplementerName = order.ImplementerId.HasValue ?
+                    order.Implementer.Name : string.Empty
             };
         }
 
@@ -119,6 +132,7 @@ namespace SecureShopDatabaseImplement.Implements
         {
             order.EquipmentId = model.EquipmentId;
             order.ClientId = model.ClientId.Value;
+            order.ImplementerId = model.ImplementerId;
             order.Count = model.Count;
             order.Status = model.Status;
             order.Sum = model.Sum;

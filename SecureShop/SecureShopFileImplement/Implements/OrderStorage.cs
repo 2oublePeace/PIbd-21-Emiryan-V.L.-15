@@ -1,4 +1,5 @@
 ﻿using SecureShopBusinessLogic.BindingModels;
+using SecureShopBusinessLogic.Enums;
 using SecureShopBusinessLogic.Interfaces;
 using SecureShopBusinessLogic.ViewModels;
 using SecureShopFileImplement.Models;
@@ -19,12 +20,9 @@ namespace SecureShopFileImplement.Implements
 
         public List<OrderViewModel> GetFullList()
         {
-            List<OrderViewModel> result = new List<OrderViewModel>();
-            foreach (var order in source.Orders)
-            {
-                result.Add(CreateModel(order));
-            }
-            return result;
+            return source.Orders
+            .Select(CreateModel)
+            .ToList();
         }
 
         public List<OrderViewModel> GetFilteredList(OrderBindingModel model)
@@ -33,10 +31,15 @@ namespace SecureShopFileImplement.Implements
             {
                 return null;
             }
-            return source.Orders
-           .Where(rec => rec.DateCreate >= model.DateFrom && rec.DateCreate <= model.DateTo)
-            .Select(CreateModel)
-            .ToList();
+            return source.Orders.Where(rec => (!model.DateFrom.HasValue &&
+               !model.DateTo.HasValue && rec.DateCreate.Date == model.DateCreate.Date) ||
+               (model.DateFrom.HasValue && model.DateTo.HasValue && rec.DateCreate.Date >=
+               model.DateFrom.Value.Date && rec.DateCreate.Date <= model.DateTo.Value.Date) ||
+               (model.ClientId.HasValue && rec.ClientId == model.ClientId) ||
+               (model.FreeOrders.HasValue && model.FreeOrders.Value && rec.Status == OrderStatus.Принят) ||
+               (model.ImplementerId.HasValue && rec.ImplementerId == model.ImplementerId && rec.Status == OrderStatus.Выполняется))
+               .Select(CreateModel)
+               .ToList();
         }
 
         public OrderViewModel GetElement(OrderBindingModel model)

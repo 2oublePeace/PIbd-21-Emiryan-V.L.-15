@@ -33,17 +33,17 @@ namespace SecureShopView
 			this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.устройстваToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.комплектыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.клиентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.исполнителиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.списокУстройствToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.устройстваПоКомплектациямToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.списокЗазказовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.запускРаботToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.dataGridView = new System.Windows.Forms.DataGridView();
 			this.createOrderBtn = new System.Windows.Forms.Button();
-			this.takeToExecutionBtn = new System.Windows.Forms.Button();
-			this.orderReadyBtn = new System.Windows.Forms.Button();
 			this.orderPayedBtn = new System.Windows.Forms.Button();
 			this.updateListBtn = new System.Windows.Forms.Button();
-			this.клиентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.topMenuStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
 			this.SuspendLayout();
@@ -54,10 +54,11 @@ namespace SecureShopView
 			this.topMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
 			this.topMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.справочникиToolStripMenuItem,
-            this.отчетыToolStripMenuItem});
+            this.отчетыToolStripMenuItem,
+            this.запускРаботToolStripMenuItem});
 			this.topMenuStrip.Location = new System.Drawing.Point(0, 0);
 			this.topMenuStrip.Name = "topMenuStrip";
-			this.topMenuStrip.Size = new System.Drawing.Size(1305, 35);
+			this.topMenuStrip.Size = new System.Drawing.Size(1305, 33);
 			this.topMenuStrip.TabIndex = 0;
 			this.topMenuStrip.Text = "menuStrip1";
 			// 
@@ -66,7 +67,8 @@ namespace SecureShopView
 			this.справочникиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.устройстваToolStripMenuItem,
             this.комплектыToolStripMenuItem,
-            this.клиентыToolStripMenuItem});
+            this.клиентыToolStripMenuItem,
+            this.исполнителиToolStripMenuItem});
 			this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
 			this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(139, 29);
 			this.справочникиToolStripMenuItem.Text = "Справочники";
@@ -74,16 +76,30 @@ namespace SecureShopView
 			// устройстваToolStripMenuItem
 			// 
 			this.устройстваToolStripMenuItem.Name = "устройстваToolStripMenuItem";
-			this.устройстваToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+			this.устройстваToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
 			this.устройстваToolStripMenuItem.Text = "Устройства";
 			this.устройстваToolStripMenuItem.Click += new System.EventHandler(this.DevicesToolStripMenuItem_Click);
 			// 
 			// комплектыToolStripMenuItem
 			// 
 			this.комплектыToolStripMenuItem.Name = "комплектыToolStripMenuItem";
-			this.комплектыToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+			this.комплектыToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
 			this.комплектыToolStripMenuItem.Text = "Комплекты";
 			this.комплектыToolStripMenuItem.Click += new System.EventHandler(this.EquipmentsToolStripMenuItem_Click);
+			// 
+			// клиентыToolStripMenuItem
+			// 
+			this.клиентыToolStripMenuItem.Name = "клиентыToolStripMenuItem";
+			this.клиентыToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
+			this.клиентыToolStripMenuItem.Text = "Клиенты";
+			this.клиентыToolStripMenuItem.Click += new System.EventHandler(this.ClientsToolStripMenuItem_Click);
+			// 
+			// исполнителиToolStripMenuItem
+			// 
+			this.исполнителиToolStripMenuItem.Name = "исполнителиToolStripMenuItem";
+			this.исполнителиToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
+			this.исполнителиToolStripMenuItem.Text = "Исполнители";
+			this.исполнителиToolStripMenuItem.Click += new System.EventHandler(this.ImplementersToolStripMenuItem_Click);
 			// 
 			// отчетыToolStripMenuItem
 			// 
@@ -116,6 +132,13 @@ namespace SecureShopView
 			this.списокЗазказовToolStripMenuItem.Text = "Список зазказов";
 			this.списокЗазказовToolStripMenuItem.Click += new System.EventHandler(this.OrdersToolStripMenuItem_Click);
 			// 
+			// запускРаботToolStripMenuItem
+			// 
+			this.запускРаботToolStripMenuItem.Name = "запускРаботToolStripMenuItem";
+			this.запускРаботToolStripMenuItem.Size = new System.Drawing.Size(136, 29);
+			this.запускРаботToolStripMenuItem.Text = "Запуск работ";
+			this.запускРаботToolStripMenuItem.Click += new System.EventHandler(this.StartWorkToolStripMenuItem_Click);
+			// 
 			// dataGridView
 			// 
 			this.dataGridView.BackgroundColor = System.Drawing.Color.White;
@@ -137,28 +160,6 @@ namespace SecureShopView
 			this.createOrderBtn.Text = "Создать заказ";
 			this.createOrderBtn.UseVisualStyleBackColor = true;
 			this.createOrderBtn.Click += new System.EventHandler(this.ButtonCreateOrder_Click);
-			// 
-			// takeToExecutionBtn
-			// 
-			this.takeToExecutionBtn.Location = new System.Drawing.Point(1024, 262);
-			this.takeToExecutionBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.takeToExecutionBtn.Name = "takeToExecutionBtn";
-			this.takeToExecutionBtn.Size = new System.Drawing.Size(222, 35);
-			this.takeToExecutionBtn.TabIndex = 3;
-			this.takeToExecutionBtn.Text = "Отдать на выполнение";
-			this.takeToExecutionBtn.UseVisualStyleBackColor = true;
-			this.takeToExecutionBtn.Click += new System.EventHandler(this.ButtonTakeOrderInWork_Click);
-			// 
-			// orderReadyBtn
-			// 
-			this.orderReadyBtn.Location = new System.Drawing.Point(1024, 338);
-			this.orderReadyBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.orderReadyBtn.Name = "orderReadyBtn";
-			this.orderReadyBtn.Size = new System.Drawing.Size(222, 35);
-			this.orderReadyBtn.TabIndex = 4;
-			this.orderReadyBtn.Text = "Заказ готов";
-			this.orderReadyBtn.UseVisualStyleBackColor = true;
-			this.orderReadyBtn.Click += new System.EventHandler(this.ButtonOrderReady_Click);
 			// 
 			// orderPayedBtn
 			// 
@@ -182,13 +183,6 @@ namespace SecureShopView
 			this.updateListBtn.UseVisualStyleBackColor = true;
 			this.updateListBtn.Click += new System.EventHandler(this.ButtonRef_Click);
 			// 
-			// клиентыToolStripMenuItem
-			// 
-			this.клиентыToolStripMenuItem.Name = "клиентыToolStripMenuItem";
-			this.клиентыToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-			this.клиентыToolStripMenuItem.Text = "Клиенты";
-			this.клиентыToolStripMenuItem.Click += new System.EventHandler(this.ClientsToolStripMenuItem_Click);
-			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -196,8 +190,6 @@ namespace SecureShopView
 			this.ClientSize = new System.Drawing.Size(1305, 692);
 			this.Controls.Add(this.updateListBtn);
 			this.Controls.Add(this.orderPayedBtn);
-			this.Controls.Add(this.orderReadyBtn);
-			this.Controls.Add(this.takeToExecutionBtn);
 			this.Controls.Add(this.createOrderBtn);
 			this.Controls.Add(this.dataGridView);
 			this.Controls.Add(this.topMenuStrip);
@@ -222,8 +214,6 @@ namespace SecureShopView
 		private System.Windows.Forms.ToolStripMenuItem комплектыToolStripMenuItem;
 		private System.Windows.Forms.DataGridView dataGridView;
 		private System.Windows.Forms.Button createOrderBtn;
-		private System.Windows.Forms.Button takeToExecutionBtn;
-		private System.Windows.Forms.Button orderReadyBtn;
 		private System.Windows.Forms.Button orderPayedBtn;
 		private System.Windows.Forms.Button updateListBtn;
 		private System.Windows.Forms.ToolStripMenuItem отчетыToolStripMenuItem;
@@ -231,5 +221,7 @@ namespace SecureShopView
 		private System.Windows.Forms.ToolStripMenuItem устройстваПоКомплектациямToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem списокЗазказовToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem клиентыToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem исполнителиToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem запускРаботToolStripMenuItem;
 	}
 }
