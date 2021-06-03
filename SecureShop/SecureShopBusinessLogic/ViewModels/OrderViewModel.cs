@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.Serialization;
-using System.Text;
+﻿using SecureShopBusinessLogic.Attributes;
 using SecureShopBusinessLogic.Enums;
+using System;
+using System.Runtime.Serialization;
 
 namespace SecureShopBusinessLogic.ViewModels
 {
     [DataContract]
     public class OrderViewModel
     {
+        [Column(title: "Номер", width: 100)]
         [DataMember]
         public int Id { get; set; }
         [DataMember]
@@ -18,29 +17,29 @@ namespace SecureShopBusinessLogic.ViewModels
         public int EquipmentId { get; set; }
         [DataMember]
         public int? ImplementerId { get; set; }
+        [Column(title: "Клиент", width: 150)]
         [DataMember]
-        [DisplayName("Клиент")]
         public string ClientFIO { get; set; }
+        [Column(title: "Комплект", width: 150)]
         [DataMember]
-        [DisplayName("Изделие")]
         public string EquipmentName { get; set; }
+        [Column(title: "Исполнитель", width: 150)]
         [DataMember]
-        [DisplayName("Количество")]
-        public int Count { get; set; }
-        [DataMember]
-        [DisplayName("Сумма")]
-        public decimal Sum { get; set; }
-        [DataMember]
-        [DisplayName("Статус")]
-        public OrderStatus Status { get; set; }
-        [DataMember]
-        [DisplayName("Дата создания")]
-        public DateTime DateCreate { get; set; }
-        [DataMember]
-        [DisplayName("Дата выполнения")]
-        public DateTime? DateImplement { get; set; }
-        [DataMember]
-        [DisplayName("Исполнитель")]
         public string ImplementerName { get; set; }
+        [Column(title: "Количество", width: 100)]
+        [DataMember]
+        public int Count { get; set; }
+        [Column(title: "Сумма", width: 50)]
+        [DataMember]
+        public decimal Sum { get; set; }
+        [Column(title: "Статус", width: 100)]
+        [DataMember]
+        public OrderStatus Status { get; set; }
+        [Column(title: "Дата создания", width: 150)]
+        [DataMember]
+        public DateTime DateCreate { get; set; }
+        [Column(title: "Дата выполнения", width: 150)]
+        [DataMember]
+        public DateTime? DateImplement { get; set; }
     }
 }
