@@ -19,6 +19,7 @@ namespace SecureShopView
         {
             InitializeComponent();
             this.logic = logic;
+            LoadData();
         }
 
         private void LoadData()

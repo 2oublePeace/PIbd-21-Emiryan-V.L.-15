@@ -122,7 +122,7 @@ namespace SecureShopDatabaseImplement.Implements
 
                         if (equipment == null)
                         {
-                            throw new Exception("Подарок не найден");
+                            throw new Exception("Комплект не найден");
                         }
 
                         CreateModel(model, equipment, context);
@@ -146,7 +146,7 @@ namespace SecureShopDatabaseImplement.Implements
 
                 if (Device == null)
                 {
-                    throw new Exception("Материал не найден");
+                    throw new Exception("Устройство не найдено");
                 }
 
                 context.Equipments.Remove(Device);

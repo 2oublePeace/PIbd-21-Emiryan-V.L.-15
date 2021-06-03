@@ -33,7 +33,7 @@ namespace SecureShopBusinessLogic.BusinessLogics
             var element = _equipmentStorage.GetElement(new EquipmentBindingModel { EquipmentName = model.EquipmentName});
             if (element != null && element.Id != model.Id)
             {
-                throw new Exception("Уже есть подарок с таким названием");
+                throw new Exception("Уже есть комплект с таким названием");
             }
             if (model.Id.HasValue)
             {
