@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using SecureShopBusinessLogic.BusinessLogics;
 using SecureShopBusinessLogic.Interfaces;
 using SecureShopDatabaseImplement.Implements;
+using SecureShopBusinessLogic.HelperModels;
 
 namespace SecureShopRestApi
 {
@@ -28,11 +29,19 @@ namespace SecureShopRestApi
             services.AddTransient<IClientStorage, ClientStorage>();
             services.AddTransient<IOrderStorage, OrderStorage>();
             services.AddTransient<IEquipmentStorage, EquipmentStorage>();
+            services.AddTransient<IMessageInfoStorage, MessageInfoStorage>();
             services.AddTransient<OrderLogic>();
             services.AddTransient<ClientLogic>();
             services.AddTransient<EquipmentLogic>();
+            services.AddTransient<MailLogic>();
             services.AddControllers().AddNewtonsoftJson();
-
+            MailLogic.MailConfig(new MailConfig
+            {
+                SmtpClientHost = "smtp.gmail.com",
+                SmtpClientPort = 587,
+                MailLogin = "emiryanforlab@gmail.com",
+                MailPassword = "123qweQWE"
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,5 +59,5 @@ namespace SecureShopRestApi
                 endpoints.MapControllers();
             });
         }
-	}
+    }
 }

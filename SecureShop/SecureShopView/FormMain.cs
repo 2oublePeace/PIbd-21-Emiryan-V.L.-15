@@ -141,7 +141,6 @@ namespace SecureShopView
 			var form = Container.Resolve<FormReportOrders>(); form.ShowDialog();
 		}
 
-
 		private void ButtonRef_Click(object sender, EventArgs e)
 		{
 			LoadData();
@@ -159,12 +158,16 @@ namespace SecureShopView
 			form.ShowDialog();
 		}
 
-
-
 		private void StartWorkToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			_workModeling.DoWork();
 			LoadData();
+		}
+
+		private void MessagesToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var form = Container.Resolve<FormMessages>();
+			form.ShowDialog();
 		}
 	}
 }
