@@ -44,7 +44,7 @@ namespace SecureShopView
 			this.createOrderBtn = new System.Windows.Forms.Button();
 			this.orderPayedBtn = new System.Windows.Forms.Button();
 			this.updateListBtn = new System.Windows.Forms.Button();
-			this.письмаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.MessagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.topMenuStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
 			this.SuspendLayout();
@@ -56,7 +56,7 @@ namespace SecureShopView
             this.справочникиToolStripMenuItem,
             this.отчетыToolStripMenuItem,
             this.запускРаботToolStripMenuItem,
-            this.письмаToolStripMenuItem});
+            this.MessagesToolStripMenuItem});
 			this.topMenuStrip.Location = new System.Drawing.Point(0, 0);
 			this.topMenuStrip.Name = "topMenuStrip";
 			this.topMenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -185,12 +185,12 @@ namespace SecureShopView
 			this.updateListBtn.UseVisualStyleBackColor = true;
 			this.updateListBtn.Click += new System.EventHandler(this.ButtonRef_Click);
 			// 
-			// письмаToolStripMenuItem
+			// MessagesToolStripMenuItem
 			// 
-			this.письмаToolStripMenuItem.Name = "письмаToolStripMenuItem";
-			this.письмаToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
-			this.письмаToolStripMenuItem.Text = "Письма";
-			this.письмаToolStripMenuItem.Click += new System.EventHandler(this.MessagesToolStripMenuItem_Click);
+			this.MessagesToolStripMenuItem.Name = "MessagesToolStripMenuItem";
+			this.MessagesToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+			this.MessagesToolStripMenuItem.Text = "Письма";
+			this.MessagesToolStripMenuItem.Click += new System.EventHandler(this.MessagesToolStripMenuItem_Click);
 			// 
 			// FormMain
 			// 
@@ -232,6 +232,6 @@ namespace SecureShopView
 		private System.Windows.Forms.ToolStripMenuItem клиентыToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem исполнителиToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem запускРаботToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem письмаToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem MessagesToolStripMenuItem;
 	}
 }

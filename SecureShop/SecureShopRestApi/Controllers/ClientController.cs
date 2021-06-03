@@ -41,11 +41,11 @@ namespace SecureShopRestApi.Controllers
         {
             if (!Regex.IsMatch(model.Email, @"^[A-Za-z0-9]+(?:[._%+-])?[A-Za-z0-9._-]+[A-Za-z0-9]@[A-Za-z0-9]+(?:[.-])?[A-Za-z0-9._-]+\.[A-Za-z]{2,6}$"))
             {
-                throw new Exception("� �������� ������ ������ ���� ������� �����");
+                throw new Exception("Ошибка ввода логина");
             }
             if (model.Password.Length > _passwordMaxLength || model.Password.Length < _passwordMinLength || !Regex.IsMatch(model.Password, @"^((\w+\d+\W+)|(\w+\W+\d+)|(\d+\w+\W+)|(\d+\W+\w+)|(\W+\w+\d+)|(\W+\d+\w+))[\w\d\W]*$"))
             {
-                throw new Exception($"������ ������ �� {_passwordMinLength} �� {_passwordMaxLength} ������ �������� �� ����, ���� � ����������� ��������");
+                throw new Exception($"Пароль должен быть минимум длинной в {_passwordMinLength} символов, содержать заглавные буквы и символы");
             }
         }
     }

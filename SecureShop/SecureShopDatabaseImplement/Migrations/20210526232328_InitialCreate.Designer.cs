@@ -10,7 +10,7 @@ using SecureShopDatabaseImplement;
 namespace SecureShopDatabaseImplement.Migrations
 {
     [DbContext(typeof(SecureShopDatabase))]
-    [Migration("20210526222107_InitialCreate")]
+    [Migration("20210526232328_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -214,7 +214,7 @@ namespace SecureShopDatabaseImplement.Migrations
             modelBuilder.Entity("SecureShopDatabaseImplement.Models.MessageInfo", b =>
                 {
                     b.HasOne("SecureShopDatabaseImplement.Models.Client", "Client")
-                        .WithMany("Messages")
+                        .WithMany()
                         .HasForeignKey("ClientId");
                 });
 
