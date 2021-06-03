@@ -40,11 +40,12 @@ namespace SecureShopView
 			this.устройстваПоКомплектациямToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.списокЗазказовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.запускРаботToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.MessagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.dataGridView = new System.Windows.Forms.DataGridView();
 			this.createOrderBtn = new System.Windows.Forms.Button();
 			this.orderPayedBtn = new System.Windows.Forms.Button();
 			this.updateListBtn = new System.Windows.Forms.Button();
-			this.MessagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.CreateBackUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.topMenuStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
 			this.SuspendLayout();
@@ -56,7 +57,8 @@ namespace SecureShopView
             this.справочникиToolStripMenuItem,
             this.отчетыToolStripMenuItem,
             this.запускРаботToolStripMenuItem,
-            this.MessagesToolStripMenuItem});
+            this.MessagesToolStripMenuItem,
+            this.CreateBackUpToolStripMenuItem});
 			this.topMenuStrip.Location = new System.Drawing.Point(0, 0);
 			this.topMenuStrip.Name = "topMenuStrip";
 			this.topMenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -141,12 +143,19 @@ namespace SecureShopView
 			this.запускРаботToolStripMenuItem.Text = "Запуск работ";
 			this.запускРаботToolStripMenuItem.Click += new System.EventHandler(this.StartWorkToolStripMenuItem_Click);
 			// 
+			// MessagesToolStripMenuItem
+			// 
+			this.MessagesToolStripMenuItem.Name = "MessagesToolStripMenuItem";
+			this.MessagesToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+			this.MessagesToolStripMenuItem.Text = "Письма";
+			this.MessagesToolStripMenuItem.Click += new System.EventHandler(this.MessagesToolStripMenuItem_Click);
+			// 
 			// dataGridView
 			// 
 			this.dataGridView.BackgroundColor = System.Drawing.Color.White;
 			this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView.Location = new System.Drawing.Point(16, 34);
-			this.dataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.dataGridView.Margin = new System.Windows.Forms.Padding(4);
 			this.dataGridView.Name = "dataGridView";
 			this.dataGridView.RowHeadersWidth = 62;
 			this.dataGridView.Size = new System.Drawing.Size(845, 506);
@@ -155,7 +164,7 @@ namespace SecureShopView
 			// createOrderBtn
 			// 
 			this.createOrderBtn.Location = new System.Drawing.Point(910, 148);
-			this.createOrderBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.createOrderBtn.Margin = new System.Windows.Forms.Padding(4);
 			this.createOrderBtn.Name = "createOrderBtn";
 			this.createOrderBtn.Size = new System.Drawing.Size(197, 28);
 			this.createOrderBtn.TabIndex = 2;
@@ -166,7 +175,7 @@ namespace SecureShopView
 			// orderPayedBtn
 			// 
 			this.orderPayedBtn.Location = new System.Drawing.Point(910, 332);
-			this.orderPayedBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.orderPayedBtn.Margin = new System.Windows.Forms.Padding(4);
 			this.orderPayedBtn.Name = "orderPayedBtn";
 			this.orderPayedBtn.Size = new System.Drawing.Size(197, 28);
 			this.orderPayedBtn.TabIndex = 5;
@@ -177,7 +186,7 @@ namespace SecureShopView
 			// updateListBtn
 			// 
 			this.updateListBtn.Location = new System.Drawing.Point(910, 394);
-			this.updateListBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.updateListBtn.Margin = new System.Windows.Forms.Padding(4);
 			this.updateListBtn.Name = "updateListBtn";
 			this.updateListBtn.Size = new System.Drawing.Size(197, 28);
 			this.updateListBtn.TabIndex = 6;
@@ -185,12 +194,12 @@ namespace SecureShopView
 			this.updateListBtn.UseVisualStyleBackColor = true;
 			this.updateListBtn.Click += new System.EventHandler(this.ButtonRef_Click);
 			// 
-			// MessagesToolStripMenuItem
+			// CreateBackUpToolStripMenuItem
 			// 
-			this.MessagesToolStripMenuItem.Name = "MessagesToolStripMenuItem";
-			this.MessagesToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
-			this.MessagesToolStripMenuItem.Text = "Письма";
-			this.MessagesToolStripMenuItem.Click += new System.EventHandler(this.MessagesToolStripMenuItem_Click);
+			this.CreateBackUpToolStripMenuItem.Name = "CreateBackUpToolStripMenuItem";
+			this.CreateBackUpToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
+			this.CreateBackUpToolStripMenuItem.Text = "Создать бэкап";
+			this.CreateBackUpToolStripMenuItem.Click += new System.EventHandler(this.CreateBackUpToolStripMenuItem_Click);
 			// 
 			// FormMain
 			// 
@@ -203,7 +212,7 @@ namespace SecureShopView
 			this.Controls.Add(this.dataGridView);
 			this.Controls.Add(this.topMenuStrip);
 			this.MainMenuStrip = this.topMenuStrip;
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "FormMain";
 			this.Text = "Магазин охранных систем";
 			this.Load += new System.EventHandler(this.FormMain_Load);
@@ -233,5 +242,6 @@ namespace SecureShopView
 		private System.Windows.Forms.ToolStripMenuItem исполнителиToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem запускРаботToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem MessagesToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem CreateBackUpToolStripMenuItem;
 	}
 }
