@@ -1,20 +1,19 @@
-﻿using System;
+﻿using SecureShopBusinessLogic.Attributes;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Runtime.Serialization;
-using System.Text;
 
 namespace SecureShopBusinessLogic.ViewModels
 {
-	public class EquipmentViewModel
-	{
+    public class EquipmentViewModel
+    {
+        [Column(title: "Номер", width: 50)]
         [DataMember]
         public int Id { get; set; }
+        [Column(title: "Название", gridViewAutoSize: GridViewAutoSize.Fill)]
         [DataMember]
-        [DisplayName("Название комплекта")]
         public string EquipmentName { get; set; }
+        [Column(title: "Цена", width: 100)]
         [DataMember]
-        [DisplayName("Цена")]
         public decimal Price { get; set; }
         [DataMember]
         public Dictionary<int, (string, int)> EquipmentDevices { get; set; }

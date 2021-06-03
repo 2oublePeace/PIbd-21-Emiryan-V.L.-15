@@ -1,22 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
+﻿using SecureShopBusinessLogic.Attributes;
+using System.Runtime.Serialization;
 
 namespace SecureShopBusinessLogic.ViewModels
 {
-	/// <summary>
-	/// Исполнитель, выполняющий заказы
-	/// </summary>
-	public class ImplementerViewModel
-	{
-		public int Id { get; set; }
-		[DisplayName("ФИО исполнителя")]
-		public string Name { get; set; }
-
-		[DisplayName("Время на заказ")] public int WorkingTime { get; set; }
-
-		[DisplayName("Время на перерыв")] public int PauseTime { get; set; }
-	}
+    public class ImplementerViewModel
+    {
+        [Column(title: "Номер", width: 50)]
+        [DataMember]
+        public int Id { get; set; }
+        [Column(title: "ФИО исполнителя", gridViewAutoSize: GridViewAutoSize.Fill)]
+        [DataMember]
+        public string Name { get; set; }
+        [Column(title: "Время на заказ", width: 100)]
+        [DataMember]
+        public int WorkingTime { get; set; }
+        [Column(title:"Время на перерыв", width: 100)]
+        [DataMember]
+        public int PauseTime { get; set; }
+    }
 }
-
