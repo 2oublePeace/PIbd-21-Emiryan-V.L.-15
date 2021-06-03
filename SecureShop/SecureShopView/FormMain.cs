@@ -166,5 +166,11 @@ namespace SecureShopView
 			_workModeling.DoWork();
 			LoadData();
 		}
+
+		private void MessagesToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var form = Container.Resolve<FormMessages>();
+			form.ShowDialog();
+		}
 	}
 }

@@ -50,6 +50,43 @@ namespace SecureShopDatabaseImplement.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Implementers",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: false),
+                    WorkingTime = table.Column<int>(nullable: false),
+                    PauseTime = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Implementers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Messages",
+                columns: table => new
+                {
+                    MessageId = table.Column<string>(nullable: false),
+                    ClientId = table.Column<int>(nullable: true),
+                    SenderName = table.Column<string>(nullable: true),
+                    DateDelivery = table.Column<DateTime>(nullable: false),
+                    Subject = table.Column<string>(nullable: true),
+                    Body = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Messages", x => x.MessageId);
+                    table.ForeignKey(
+                        name: "FK_Messages_Clients_ClientId",
+                        column: x => x.ClientId,
+                        principalTable: "Clients",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "EquipmentDevices",
                 columns: table => new
                 {
@@ -83,7 +120,8 @@ namespace SecureShopDatabaseImplement.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     EquipmentId = table.Column<int>(nullable: false),
-                    ClientId = table.Column<int>(nullable: false),
+                    ClientId = table.Column<int>(nullable: true),
+                    ImplementerId = table.Column<int>(nullable: true),
                     Count = table.Column<int>(nullable: false),
                     Sum = table.Column<decimal>(nullable: false),
                     Status = table.Column<int>(nullable: false),
@@ -98,13 +136,19 @@ namespace SecureShopDatabaseImplement.Migrations
                         column: x => x.ClientId,
                         principalTable: "Clients",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Orders_Equipments_EquipmentId",
                         column: x => x.EquipmentId,
                         principalTable: "Equipments",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Orders_Implementers_ImplementerId",
+                        column: x => x.ImplementerId,
+                        principalTable: "Implementers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -118,6 +162,11 @@ namespace SecureShopDatabaseImplement.Migrations
                 column: "EquipmentId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Messages_ClientId",
+                table: "Messages",
+                column: "ClientId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Orders_ClientId",
                 table: "Orders",
                 column: "ClientId");
@@ -126,12 +175,20 @@ namespace SecureShopDatabaseImplement.Migrations
                 name: "IX_Orders_EquipmentId",
                 table: "Orders",
                 column: "EquipmentId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_ImplementerId",
+                table: "Orders",
+                column: "ImplementerId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "EquipmentDevices");
+
+            migrationBuilder.DropTable(
+                name: "Messages");
 
             migrationBuilder.DropTable(
                 name: "Orders");
@@ -144,6 +201,9 @@ namespace SecureShopDatabaseImplement.Migrations
 
             migrationBuilder.DropTable(
                 name: "Equipments");
+
+            migrationBuilder.DropTable(
+                name: "Implementers");
         }
     }
 }
